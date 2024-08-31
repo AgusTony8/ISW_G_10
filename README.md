@@ -33,7 +33,7 @@ Asegúrate de contar con el sistema de control de versiones, Git.
 <h3>Reglas de nombrado y ubicaciones</h3>
 <h3>Listado de items de configuracion</h3>
 
-Disclaimer
+<h2>Disclaimer</h2>
 No hay ninguna garantía, expresa o implícita, asociada con este producto. Úselo bajo su propio riesgo.
 
 
