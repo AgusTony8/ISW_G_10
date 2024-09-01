@@ -23,35 +23,68 @@ Sigue estos pasos para clonar e instalar el proyecto en tu máquina local:
 Asegúrate de contar con el sistema de control de versiones, Git.
 
 <h2>Estructura de Repositorio</h2>
-- **Bibliografía**
-  - **Unidad 1. Ingeniería de Software en Contexto**
-    - Ingeniería de Software
-  - **Unidad 2. Gestión Lean Ágil de Productos de Software**
-    - Agile
-    - Lean y Kanban
-  - **Unidad 3. Gestión del Software como Producto**
-    - SCM
-  - **Unidad 4. Aseguramiento de Calidad de Proceso y de Producto**
-    - Testing de Software
-- **Clases Grabadas**
-- **Cronograma de Clases**
-- **Guías de Trabajos Prácticos y de Investigación**
-  - Guía Trabajos Prácticos
-  - Guía Trabajos Prácticos de Investigación
-  - Guía Trabajos Prácticos Resueltos
-- **Material de Apoyo**
-  - Material Clase
-  - Programa de la Materia
-  - Resúmenes
-- **Templates de Trabajos Prácticos y Parciales**
-  - Templates Trabajos Prácticos
-  - Templates Parciales
-- **Trabajos Prácticos**
-  - Prácticos Adicionales
-  - Trabajos Prácticos Conceptuales
-  - Trabajos Prácticos Evaluables
-    - Implementación Proyecto
-  - Trabajos Prácticos No Evaluables
+<ul>
+  <li><strong>Bibliografía</strong>
+    <ul>
+      <li><strong>Unidad 1. Ingeniería de Software en Contexto</strong>
+        <ul>
+          <li>Ingeniería de Software</li>
+        </ul>
+      </li>
+      <li><strong>Unidad 2. Gestión Lean Ágil de Productos de Software</strong>
+        <ul>
+          <li>Agile</li>
+          <li>Lean y Kanban</li>
+        </ul>
+      </li>
+      <li><strong>Unidad 3. Gestión del Software como Producto</strong>
+        <ul>
+          <li>SCM</li>
+        </ul>
+      </li>
+      <li><strong>Unidad 4. Aseguramiento de Calidad de Proceso y de Producto</strong>
+        <ul>
+          <li>Testing de Software</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Clases Grabadas</strong></li>
+  <li><strong>Cronograma de Clases</strong></li>
+  <li><strong>Guías de Trabajos Prácticos y de Investigación</strong>
+    <ul>
+      <li>Guía Trabajos Prácticos</li>
+      <li>Guía Trabajos Prácticos de Investigación</li>
+      <li>Guía Trabajos Prácticos Resueltos</li>
+    </ul>
+  </li>
+  <li><strong>Material de Apoyo</strong>
+    <ul>
+      <li>Material Clase</li>
+      <li>Programa de la Materia</li>
+      <li>Resúmenes</li>
+    </ul>
+  </li>
+  <li><strong>Templates de Trabajos Prácticos y Parciales</strong>
+    <ul>
+      <li>Templates Trabajos Prácticos</li>
+      <li>Templates Parciales</li>
+    </ul>
+  </li>
+  <li><strong>Trabajos Prácticos</strong>
+    <ul>
+      <li>Prácticos Adicionales</li>
+      <li>Trabajos Prácticos Conceptuales</li>
+      <li>Trabajos Prácticos Evaluables
+        <ul>
+          <li>Implementación Proyecto</li>
+        </ul>
+      </li>
+      <li>Trabajos Prácticos No Evaluables</li>
+    </ul>
+  </li>
+</ul>
+
 
 
 
@@ -137,6 +170,8 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
 
 
 <h3>Reglas de nombrado y ubicaciones</h3>
+<h3>Reglas de nombrado y ubicaciones</h3>
+
 <table>
   <thead>
     <tr>
@@ -147,77 +182,78 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
   </thead>
   <tbody>
     <tr>
-      <td>Dato 1,1</td>
-      <td>Dato 1,2</td>
-      <td>Dato 1,3</td>
+      <td>Bibliografía</td>
+      <td>ISW_Bib_U&lt;NroUnidad&gt;_&lt;NombreLibro&gt;.pdf</td>
+      <td>/Bibliografía/Unidad&lt;X&gt;/&lt;NombreUnidad&gt;/&lt;NombreSubCarpetaUnidad&gt; (UnidadX es el número de unidad)</td>
     </tr>
     <tr>
-      <td>Dato 2,1</td>
-      <td>Dato 2,2</td>
-      <td>Dato 2,3</td>
+      <td>Clases Grabadas</td>
+      <td>ISW_Link&lt;tipo de clase&gt;-&lt;Curso&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/ClasesGrabadas</td>
     </tr>
     <tr>
-      <td>Dato 3,1</td>
-      <td>Dato 3,2</td>
-      <td>Dato 3,3</td>
+      <td>Cronograma de Clases</td>
+      <td>ISW_CdC_&lt;Año&gt;_4K&lt;numero curso&gt;.pdf</td>
+      <td>/CronogramaDeClases</td>
     </tr>
     <tr>
-      <td>Dato 4,1</td>
-      <td>Dato 4,2</td>
-      <td>Dato 4,3</td>
+      <td>Guías de Trabajos Prácticos y de Investigación</td>
+      <td>ISW_Gui_&lt;TipoTrabajo&gt;-&lt;Cuatrimestre&gt;-&lt;Año&gt;.pdf</td>
+      <td>/GuíasDeTrabajosPracticosYDeInvestigacion/&lt;TipoGuia&gt;/</td>
     </tr>
     <tr>
-      <td>Dato 5,1</td>
-      <td>Dato 5,2</td>
-      <td>Dato 5,3</td>
+      <td>Material de Apoyo</td>
+      <td>ISW_&lt;nombre del material&gt;-&lt;año&gt;.&lt;ext&gt;</td>
+      <td>/ProgramaDeLaMateria</td>
     </tr>
     <tr>
-      <td>Dato 6,1</td>
-      <td>Dato 6,2</td>
-      <td>Dato 6,3</td>
+      <td>Material de Clase</td>
+      <td>ISW_&lt;Número de presentación&gt;-&lt;nombre de presentación&gt;.&lt;ext&gt;</td>
+      <td>/MaterialDeClases</td>
     </tr>
     <tr>
-      <td>Dato 7,1</td>
-      <td>Dato 7,2</td>
-      <td>Dato 7,3</td>
+      <td>Programa de la Materia</td>
+      <td>ISW_PlanISW_&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/ProgramaDeLaMateria</td>
     </tr>
     <tr>
-      <td>Dato 8,1</td>
-      <td>Dato 8,2</td>
-      <td>Dato 8,3</td>
+      <td>Resúmenes</td>
+      <td>ISW_Resumen_P&lt;NroParcial&gt;_&lt;año&gt;.&lt;ext&gt;<br>ISW_Resumen_Completo_&lt;año&gt;.&lt;ext&gt;</td>
+      <td>/Resúmenes/</td>
     </tr>
     <tr>
-      <td>Dato 9,1</td>
-      <td>Dato 9,2</td>
-      <td>Dato 9,3</td>
+      <td>Template Parcial</td>
+      <td>ISW_TempParc_&lt;NroParcial&gt;-&lt;Cuatrimestre&gt;-&lt;Año&gt;.docx</td>
+      <td>/TemplatesDeTrabajosPracticosYParciales/TemplatesParciales</td>
     </tr>
     <tr>
-      <td>Dato 10,1</td>
-      <td>Dato 10,2</td>
-      <td>Dato 10,3</td>
+      <td>Template Trabajo Práctico</td>
+      <td>ISW_TempTP_&lt;NombreTemplate&gt;-&lt;Cuatrimestre&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/TemplatesDeTrabajosPracticosYParciales/TemplatesTrabajosPracticos</td>
     </tr>
     <tr>
-      <td>Dato 11,1</td>
-      <td>Dato 11,2</td>
-      <td>Dato 11,3</td>
+      <td>Trabajo Práctico Evaluable</td>
+      <td>ISW_TPE_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoPractico&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/TrabajosPracticos/TrabajosPracticosEvaluables</td>
     </tr>
     <tr>
-      <td>Dato 12,1</td>
-      <td>Dato 12,2</td>
-      <td>Dato 12,3</td>
+      <td>Trabajo Práctico No Evaluable</td>
+      <td>ISW_TPNE_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoPractico&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/TrabajosPracticos/TrabajosPracticosNoEvaluables</td>
     </tr>
     <tr>
-      <td>Dato 13,1</td>
-      <td>Dato 13,2</td>
-      <td>Dato 13,3</td>
+      <td>Trabajo Práctico de Investigación</td>
+      <td>ISW_TPI_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoConceptual&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/TrabajosPracticos/TrabajosPracticosConceptuales</td>
     </tr>
     <tr>
-      <td>Dato 14,1</td>
-      <td>Dato 14,2</td>
-      <td>Dato 14,3</td>
+      <td>Práctico Adicional</td>
+      <td>ISW_PA_Nro&lt;NroEjercicio&gt;-&lt;NombreEjercicio&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/TrabajosPracticos/PracticosAdicionales</td>
     </tr>
   </tbody>
 </table>
+
 <h3>Listado de items de configuracion</h3>
 
 <h2>Disclaimer</h2>
