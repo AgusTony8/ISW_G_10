@@ -170,7 +170,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
 
 
 <h3>Reglas de nombrado y ubicaciones</h3>
-<h3>Reglas de nombrado y ubicaciones</h3>
 
 <table>
   <thead>
@@ -255,6 +254,165 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
 </table>
 
 <h3>Listado de items de configuracion</h3>
+<ul>
+  <li><strong>/Bibliografía</strong>
+    <ul>
+      <li><strong>/Unidad 1_Ingeniería de Software en Contexto</strong>
+        <ul>
+          <li><strong>/Ingeniería de Software</strong>
+            <ul>
+              <li>ISW_Bib_U1_TheMythicalMan-Month_EssaySonSoftwareEngineer.pdf</li>
+              <li>ISW_Bib_U1_SoftwareEstimationDemystifyingTheBlackArtMicrosoftPress2006.pdf</li>
+              <li>ISW_Bib_U1_SoftwareEngineeringBodyOfKnowledge.pdf</li>
+              <li>ISW_Bib_U1_IngenieriaDelSoftwareRogerPressman7maEdicion.pdf</li>
+              <li>ISW_Bib_U1_INGENIERIADESOFTWARE-NovenaEdicionIanSomerville.pdf</li>
+              <li>ISW_Bib_U1_CynefinMiniBook.pdf</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>/Unidad 2_Gestión Lean Ágil de Productos de Software</strong>
+        <ul>
+          <li><strong>/Agile</strong>
+            <ul>
+              <li>ISW_Bib_U2_AddisonWesleyUserStoriesAppliedForAgileSoftwareDev.pdf</li>
+              <li>ISW_Bib_U2_AddisonWesleyUserStoriesAppliedForAgileSoftwareDev.pdf</li>
+              <li>ISW_Bib_U2_AgileEstimatingAndPlanning.pdf</li>
+              <li>ISW_Bib_U2_AgileRetrospectivesMakingGoodTeamsGreat.pdf</li>
+              <li>ISW_Bib_U2_ScrumYXpDesdeLasTrincheras.pdf</li>
+            </ul>
+          </li>
+          <li><strong>/LeanYKanban</strong>
+            <ul>
+              <li>ISW_Bib_U2_EssentialKanbanCondensedSpanish.pdf</li>
+              <li>ISW_Bib_U2_ImplementingLeanSoftwareDevelopmentFromConceptToCash.pdf</li>
+              <li>ISW_Bib_U2_KanbanCambioEvolutivoExitosoParaSuNegocioDeTecnologia.pdf</li>
+              <li>ISW_Bib_U2_KanbanVsScrum.pdf</li>
+              <li>ISW_Bib_U2_LearnFromTheTrenches.pdf</li>
+              <li>ISW_Bib_U2_LeanSoftwareDevelopmentAnAgileToolkit.pdf</li>
+              <li>ISW_Bib_U2_LeanUX.pdf</li>
+              <li>ISW_Bib_U2_TheOfficialKanbanGuide.pdf</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>/Unidad 3_Gestión del Software como Producto</strong>
+        <ul>
+          <li><strong>/SCM</strong>
+            <ul>
+              <li>ISW_Bib_U3_AgileSCM.pdf</li>
+              <li>ISW_Bib_U3_LittleBookOfConfigurationManagement.pdf</li>
+              <li>ISW_Bib_U3_Paper SCM - Berstoff.pdf</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>/Unidad 4_Aseguramiento de Calidad de Proceso y de Producto</strong>
+        <ul>
+          <li><strong>/Testing de Software</strong>
+            <ul>
+              <li>ISW_Bib_U4_AgileTestingAPracticalGuideForTestersAndAgileTeams.pdf</li>
+              <li>ISW_Bib_U4_IntroducciónALasPruebasDeSistemasDeInformacionAbstractas.pdf</li>
+              <li>ISW_Bib_U4_SoftwareTesting.pdf</li>
+              <li>ISW_Bib_U4_TheArtOfSoftwareTesting3Edition.pdf</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>/ClasesGrabadas</strong>
+    <ul>
+      <li>ISW_LinkClasesGrabada_4k2_2020.pdf</li>
+      <li>ISW_Links_ClasesInvertidas_4k2_2024.pdf</li>
+      <li>ISW_LinksClasesGrabadas_TodosLosCursos_2021.xlsx</li>
+    </ul>
+  </li>
+  <li><strong>/CronogramaDeClases</strong>
+    <ul>
+      <li>ISW_CdC_2024_4k2.pdf</li>
+    </ul>
+  </li>
+  <li><strong>/GuiasTrabajosPracticosYDeInvestigacion</strong>
+    <ul>
+      <li><strong>/GuiaTrabajosPracticos</strong>
+        <ul>
+          <li>ISW_Gui_TrabajosPrácticos_C2_2024.pdf</li>
+        </ul>
+      </li>
+      <li><strong>/GuiaTrabajosPracticosDeInvestigacion</strong>
+        <ul>
+          <li>ISW_Gui_TrabajosDeInvestigacion_C2_2024.pdf</li>
+        </ul>
+      </li>
+      <li><strong>/GuiaTrabajosPracticosResueltos</strong>
+        <ul>
+          <li>ISW_Gui_TrabajosPracticosResueltos_C2_2024.pdf</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>/MaterialDeApoyo</strong>
+    <ul>
+      <li>ISW_Herramientas_PresentaciónInformacion_2024.pdf</li>
+    </ul>
+  </li>
+  <li><strong>/MaterialDeClases</strong>
+    <ul>
+      <li>ISW_01_SCM.pdf</li>
+      <li>ISW_02_ReqÁgilesUserStories.pdf</li>
+      <li>ISW_03_EstimacionesÁgiles.pdf</li>
+      <li>ISW_04_GestiónProductosSoftware.pdf</li>
+      <li>ISW_05_ComponentesProyectoSW.pdf</li>
+      <li>ISW_06_EstimacionesSw.pdf</li>
+      <li>ISW_07_SCRUM2020PlanificaciónReleaseSprintMétricasScrum.pdf</li>
+      <li>ISW_08_TestingSoftware.pdf</li>
+      <li>ISW_09_TestingSoftwareEstrategiasCajaNegra.pdf</li>
+      <li>ISW_10_LeanKanban.pdf</li>
+      <li>ISW_11_MétricasDiferentesEnfoques.pdf</li>
+      <li>ISW_12_PPQAIntro.pdf</li>
+      <li>ISW_13_Revisionestécnicas.pdf</li>
+      <li>ISW_14_AuditoríasDeSw.pdf</li>
+      <li>ISW_15_RetrospectivasIntroPráctico.pdf</li>
+    </ul>
+  </li>
+  <li><strong>/ProgramaDeLaMateria</strong>
+    <ul>
+      <li>ISW_PlaniSW_2024.pdf</li>
+    </ul>
+  </li>
+  <li><strong>/Templates</strong>
+    <ul>
+      <li><strong>/TemplatesParciales</strong>
+        <ul>
+          <li>ISW_TempParc1_C2_2024.docx</li>
+          <li>ISW_TempParc2_C2_2024.docx</li>
+        </ul>
+      </li>
+      <li><strong>/TemplatesTrabajosPracticos</strong>
+        <ul>
+          <li>ISW_TempTP_TemplateCasosDePruebaCajaNegra_C2_2024.docx</li>
+          <li>ISW_TempTP_TemplateCasosDePruebaYReporteDeBugs_C2_2024.xlsx</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>/TrabajosPracticos</strong>
+    <ul>
+      <li><strong>/TrabajosPracticosEvaluables</strong>
+        <ul>
+          <li>ISW_TPE_Nro1_SCMHerramientasDeSCM_4K2_2024.pdf</li>
+        </ul>
+      </li>
+      <li><strong>/TrabajosPracticosNoEvaluables</strong></li>
+      <li><strong>/TrabajosPracticosConceptuales</strong></li>
+      <li><strong>/PracticosAdicionales</strong></li>
+    </ul>
+  </li>
+</ul>
+
+
+
 
 <h2>Disclaimer</h2>
 No hay ninguna garantía, expresa o implícita, asociada con este producto. Úselo bajo su propio riesgo.
