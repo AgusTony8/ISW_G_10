@@ -255,7 +255,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
 
 <h3>Listado de items de configuracion</h3>
 <ul>
-  <strong>Bibliografía</strong>
+  <strong>Bibliografía<br></strong>
   <li>/Bibliografía
     <ul>
       <li>/Unidad 1_Ingeniería de Software en Contexto
