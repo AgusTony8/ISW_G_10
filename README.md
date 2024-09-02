@@ -26,61 +26,58 @@ Asegúrate de contar con el sistema de control de versiones, Git.
 <ul>
   <li><strong>Bibliografía</strong>
     <ul>
-      <li><strong>Unidad 1. Ingeniería de Software en Contexto</strong>
+      <li><strong>Unidad1_IngenieríaDeSoftwareEnContexto</strong>
         <ul>
-          <li>Ingeniería de Software</li>
+          <li>IngenieríaDeSoftware</li>
         </ul>
       </li>
-      <li><strong>Unidad 2. Gestión Lean Ágil de Productos de Software</strong>
+      <li><strong>Unidad2_GestiónLeanÁgilDeProductosDeSoftware</strong>
         <ul>
           <li>Agile</li>
-          <li>Lean y Kanban</li>
+          <li>LeanYKanban</li>
         </ul>
       </li>
-      <li><strong>Unidad 3. Gestión del Software como Producto</strong>
+      <li><strong>Unidad3_GestiónDelSoftwareComoProducto</strong>
         <ul>
           <li>SCM</li>
         </ul>
       </li>
-      <li><strong>Unidad 4. Aseguramiento de Calidad de Proceso y de Producto</strong>
+      <li><strong>Unidad4_AseguramientoDeCalidadDeProcesoYDeProducto</strong>
         <ul>
-          <li>Testing de Software</li>
+          <li>TestingDeSoftware</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><strong>Clases Grabadas</strong></li>
-  <li><strong>Cronograma de Clases</strong></li>
-  <li><strong>Guías de Trabajos Prácticos y de Investigación</strong>
+  <li><strong>ClasesGrabadas</strong></li>
+  <li><strong>CronogramaDeClases</strong></li>
+  <li><strong>GuíasDeTrabajosPrácticosYDeInvestigación</strong>
     <ul>
-      <li>Guía Trabajos Prácticos</li>
-      <li>Guía Trabajos Prácticos de Investigación</li>
-      <li>Guía Trabajos Prácticos Resueltos</li>
+      <li>GuíaTrabajosPrácticos</li>
+      <li>GuíaTrabajosPrácticosDeInvestigación</li>
+      <li>GuíaTrabajosPrácticosResueltos</li>
     </ul>
   </li>
-  <li><strong>Material de Apoyo</strong>
+  <li><strong>MaterialDeApoyo</strong></li>
+  <li>MaterialDeClases</li>
+  <li>ProgramaDeLaMateria</li>
+  <li>Resúmenes</li>
+  <li><strong>TemplatesDeTrabajosPrácticosYParciales</strong>
     <ul>
-      <li>Material Clase</li>
-      <li>Programa de la Materia</li>
-      <li>Resúmenes</li>
+      <li>TemplatesTrabajosPrácticos</li>
+      <li>TemplatesParciales</li>
     </ul>
   </li>
-  <li><strong>Templates de Trabajos Prácticos y Parciales</strong>
+  <li><strong>TrabajosPrácticos</strong>
     <ul>
-      <li>Templates Trabajos Prácticos</li>
-      <li>Templates Parciales</li>
-    </ul>
-  </li>
-  <li><strong>Trabajos Prácticos</strong>
-    <ul>
-      <li>Prácticos Adicionales</li>
-      <li>Trabajos Prácticos Conceptuales</li>
-      <li>Trabajos Prácticos Evaluables
+      <li>PrácticosAdicionales</li>
+      <li>TrabajosPrácticosDeInvestigacion</li>
+      <li>TrabajosPrácticosEvaluables
         <ul>
-          <li>Implementación Proyecto</li>
+          <li>ImplementaciónProyecto</li>
         </ul>
       </li>
-      <li>Trabajos Prácticos No Evaluables</li>
+      <li>TrabajosPrácticosNoEvaluables</li>
     </ul>
   </li>
 </ul>
@@ -258,9 +255,9 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
   <strong>Bibliografía<br></strong>
   <br><li>/Bibliografía
     <ul>
-      <li>/Unidad 1_Ingeniería de Software en Contexto
+      <li>/Unidad1_IngenieríaDeSoftwareEnContexto
         <ul>
-          <li>/Ingeniería de Software
+          <li>/IngenieríaDeSoftware
             <ul>
               <li>ISW_Bib_U1_TheMythicalMan-Month_EssaySonSoftwareEngineer.pdf</li>
               <li>ISW_Bib_U1_SoftwareEstimationDemystifyingTheBlackArtMicrosoftPress2006.pdf</li>
