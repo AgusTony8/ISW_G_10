@@ -269,7 +269,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li>/Unidad 2_Gestión Lean Ágil de Productos de Software
+      <li>/Unidad2_GestiónLeanÁgilDeProductosDeSoftware
         <ul>
           <li>/Agile
             <ul>
@@ -294,7 +294,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li>/Unidad 3_Gestión del Software como Producto
+      <li>/Unidad3_GestiónDelSoftwareComoProducto
         <ul>
           <li>/SCM
             <ul>
@@ -305,9 +305,9 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li>/Unidad 4_Aseguramiento de Calidad de Proceso y de Producto
+      <li>/Unidad4_AseguramientoDeCalidadDeProcesoYDeProducto
         <ul>
-          <li>/Testing de Software
+          <li>/TestingDeSoftware
             <ul>
               <li>ISW_Bib_U4_AgileTestingAPracticalGuideForTestersAndAgileTeams.pdf</li>
               <li>ISW_Bib_U4_IntroducciónALasPruebasDeSistemasDeInformacionAbstractas.pdf</li>
@@ -345,7 +345,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
       <li>/GuiaTrabajosPracticosDeInvestigacion
         <ul>
-          <li>ISW_Gui_TrabajosDeInvestigacion_C2_2024.pdf</li>
+          <li>ISW_Gui_TrabajosPracticosDeInvestigacion_C2_2024.pdf</li>
         </ul>
       </li>
       <li>/GuiaTrabajosPracticosResueltos
@@ -392,7 +392,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
   </li>
 
   <strong><br>Templates</strong>
-  <li>/Templates
+  <li>/TemplatesDeTrabajosPrácticosYParciales
     <ul>
       <li>/TemplatesParciales
         <ul>
@@ -418,7 +418,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
         </ul>
       </li>
       <li>/TrabajosPracticosNoEvaluables</li>
-      <li>/TrabajosPracticosConceptuales</li>
+      <li>/TrabajosPracticosDeInvestigacion</li>
       <li>/PracticosAdicionales</li>
     </ul>
   </li>
