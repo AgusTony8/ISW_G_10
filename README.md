@@ -322,6 +322,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
     </ul>
   </li>
+  <strong>ClasesGrabadas</strong>
   <li>/ClasesGrabadas
     <ul>
       <li>ISW_LinkClasesGrabada_4k2_2020.pdf</li>
@@ -329,11 +330,13 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>ISW_LinksClasesGrabadas_TodosLosCursos_2021.xlsx</li>
     </ul>
   </li>
+  <strong>CronogramaDeClases</strong>
   <li>/CronogramaDeClases
     <ul>
       <li>ISW_CdC_2024_4k2.pdf</li>
     </ul>
   </li>
+  <strong>GuiasTrabajosPracticosYDeInvestigacion</strong>
   <li>/GuiasTrabajosPracticosYDeInvestigacion
     <ul>
       <li>/GuiaTrabajosPracticos
@@ -353,11 +356,13 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
     </ul>
   </li>
+  <strong>MaterialDeApoyo</strong>
   <li>/MaterialDeApoyo
     <ul>
       <li>ISW_Herramientas_PresentaciónInformacion_2024.pdf</li>
     </ul>
   </li>
+  <strong>MaterialDeClases</strong>
   <li>/MaterialDeClases
     <ul>
       <li>ISW_01_SCM.pdf</li>
@@ -377,11 +382,13 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>ISW_15_RetrospectivasIntroPráctico.pdf</li>
     </ul>
   </li>
+  <strong>ProgramaDeLaMateria</strong>
   <li>/ProgramaDeLaMateria
     <ul>
       <li>ISW_PlaniSW_2024.pdf</li>
     </ul>
   </li>
+  <strong>Templates</strong>
   <li>/Templates
     <ul>
       <li>/TemplatesParciales
@@ -398,6 +405,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
     </ul>
   </li>
+  <strong>TrabajosPracticos</strong>
   <li>/TrabajosPracticos
     <ul>
       <li>/TrabajosPracticosEvaluables
