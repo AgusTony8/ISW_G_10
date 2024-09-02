@@ -184,7 +184,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </tr>
     <tr>
       <td>Clases Grabadas</td>
-      <td>ISW_Link&lt;tipo de clase&gt;-&lt;Curso&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>ISW_Link_&lt;tipo de clase&gt;_&lt;Curso&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
       <td>/ClasesGrabadas</td>
     </tr>
     <tr>
@@ -323,9 +323,9 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
   <strong><br>ClasesGrabadas</strong>
   <li>/ClasesGrabadas
     <ul>
-      <li>ISW_LinkClasesGrabada_4k2_2020.pdf</li>
+      <li>ISW_Links_ClasesGrabadas_4k2_2020.pdf</li>
       <li>ISW_Links_ClasesInvertidas_4k2_2024.pdf</li>
-      <li>ISW_LinksClasesGrabadas_TodosLosCursos_2021.xlsx</li>
+      <li>ISW_Links_ClasesGrabadas_TodosLosCursos_2021.xlsx</li>
     </ul>
   </li>
   <strong>CronogramaDeClases</strong>
