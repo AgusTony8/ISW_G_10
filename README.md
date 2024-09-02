@@ -255,9 +255,8 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
 
 <h3>Listado de items de configuracion</h3>
 <ul>
-  <strong>Bibliografía</strong>
-
-  <li><br>/Bibliografía
+  <strong>Bibliografía<br></strong>
+  <br><li>/Bibliografía
     <ul>
       <li>/Unidad 1_Ingeniería de Software en Contexto
         <ul>
@@ -324,7 +323,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 
-  <strong>ClasesGrabadas</strong>
+  <strong><br>ClasesGrabadas</strong>
   <li>/ClasesGrabadas
     <ul>
       <li>ISW_LinkClasesGrabada_4k2_2020.pdf</li>
@@ -339,7 +338,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
   
-  <strong>GuiasTrabajosPracticosYDeInvestigacion</strong>
+  <strong><br>GuiasTrabajosPracticosYDeInvestigacion</strong>
   <li>/GuiasTrabajosPracticosYDeInvestigacion
     <ul>
       <li>/GuiaTrabajosPracticos
@@ -360,14 +359,14 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 
-  <strong>MaterialDeApoyo</strong>
+  <strong><br>MaterialDeApoyo</strong>
   <li>/MaterialDeApoyo
     <ul>
       <li>ISW_Herramientas_PresentaciónInformacion_2024.pdf</li>
     </ul>
   </li>
 
-  <strong>MaterialDeClases</strong>
+  <strong><br>MaterialDeClases</strong>
   <li>/MaterialDeClases
     <ul>
       <li>ISW_01_SCM.pdf</li>
@@ -388,14 +387,14 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 
-  <strong>ProgramaDeLaMateria</strong>
+  <strong><br>ProgramaDeLaMateria</strong>
   <li>/ProgramaDeLaMateria
     <ul>
       <li>ISW_PlaniSW_2024.pdf</li>
     </ul>
   </li>
 
-  <strong>Templates</strong>
+  <strong><br>Templates</strong>
   <li>/Templates
     <ul>
       <li>/TemplatesParciales
@@ -413,7 +412,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 
-  <strong>TrabajosPracticos</strong>
+  <strong><br>TrabajosPracticos</strong>
   <li>/TrabajosPracticos
     <ul>
       <li>/TrabajosPracticosEvaluables
