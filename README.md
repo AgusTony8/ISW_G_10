@@ -315,13 +315,14 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
               <li>ISW_Bib_U4_AgileTestingAPracticalGuideForTestersAndAgileTeams.pdf</li>
               <li>ISW_Bib_U4_IntroducciónALasPruebasDeSistemasDeInformacionAbstractas.pdf</li>
               <li>ISW_Bib_U4_SoftwareTesting.pdf</li>
-              <li>ISW_Bib_U4_TheArtOfSoftwareTesting3Edition.pdf</li>
+              <li>ISW_Bib_U4_TheArtOfSoftwareTesting3Edition.pdf<br></li>
             </ul>
           </li>
         </ul>
       </li>
     </ul>
   </li>
+
   <strong>ClasesGrabadas</strong>
   <li>/ClasesGrabadas
     <ul>
@@ -333,9 +334,10 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
   <strong>CronogramaDeClases</strong>
   <li>/CronogramaDeClases
     <ul>
-      <li>ISW_CdC_2024_4k2.pdf</li>
+      <li>ISW_CdC_2024_4k2.pdf<br></li>
     </ul>
   </li>
+
   <strong>GuiasTrabajosPracticosYDeInvestigacion</strong>
   <li>/GuiasTrabajosPracticosYDeInvestigacion
     <ul>
@@ -351,17 +353,19 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
       <li>/GuiaTrabajosPracticosResueltos
         <ul>
-          <li>ISW_Gui_TrabajosPracticosResueltos_C2_2024.pdf</li>
+          <li>ISW_Gui_TrabajosPracticosResueltos_C2_2024.pdf<br></li>
         </ul>
       </li>
     </ul>
   </li>
+
   <strong>MaterialDeApoyo</strong>
   <li>/MaterialDeApoyo
     <ul>
       <li>ISW_Herramientas_PresentaciónInformacion_2024.pdf</li>
     </ul>
   </li>
+
   <strong>MaterialDeClases</strong>
   <li>/MaterialDeClases
     <ul>
@@ -379,15 +383,17 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>ISW_12_PPQAIntro.pdf</li>
       <li>ISW_13_Revisionestécnicas.pdf</li>
       <li>ISW_14_AuditoríasDeSw.pdf</li>
-      <li>ISW_15_RetrospectivasIntroPráctico.pdf</li>
+      <li>ISW_15_RetrospectivasIntroPráctico.pdf<br></li>
     </ul>
   </li>
+
   <strong>ProgramaDeLaMateria</strong>
   <li>/ProgramaDeLaMateria
     <ul>
-      <li>ISW_PlaniSW_2024.pdf</li>
+      <li>ISW_PlaniSW_2024.pdf<br></li>
     </ul>
   </li>
+
   <strong>Templates</strong>
   <li>/Templates
     <ul>
@@ -400,11 +406,12 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>/TemplatesTrabajosPracticos
         <ul>
           <li>ISW_TempTP_TemplateCasosDePruebaCajaNegra_C2_2024.docx</li>
-          <li>ISW_TempTP_TemplateCasosDePruebaYReporteDeBugs_C2_2024.xlsx</li>
+          <li>ISW_TempTP_TemplateCasosDePruebaYReporteDeBugs_C2_2024.xlsx<br></li>
         </ul>
       </li>
     </ul>
   </li>
+
   <strong>TrabajosPracticos</strong>
   <li>/TrabajosPracticos
     <ul>
@@ -419,9 +426,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 </ul>
-
-
-
 
 
 <h2>Disclaimer</h2>
