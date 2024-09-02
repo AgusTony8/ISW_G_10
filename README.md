@@ -6,7 +6,7 @@
 Este proyecto contiene el desarrollo de los prácticos evaluables y no evaluables de la materia "Ingeniería de Software".
 A su vez, presenta el material correspondiente de la cátedra, material bibliográfico, reglas de nombrado, planificación
 de la materia, clases grabadas, material de apoyo y todo el material especificado en su completitud en la vista de la
-estructura del repositorio. 
+estructura del repositorio.  Se utilizara PascalCase para el nombrado de carpetas e items de configuracion
 
 <h2>Instalacion</h2>
 
