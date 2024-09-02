@@ -255,12 +255,12 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
 
 <h3>Listado de items de configuracion</h3>
 <ul>
-  Bibliografía
-  <li><strong>/Bibliografía</strong>
+  <strong>Bibliografía</strong>
+  <li>/Bibliografía
     <ul>
-      <li><strong>/Unidad 1_Ingeniería de Software en Contexto</strong>
+      <li>/Unidad 1_Ingeniería de Software en Contexto
         <ul>
-          <li><strong>/Ingeniería de Software</strong>
+          <li>/Ingeniería de Software
             <ul>
               <li>ISW_Bib_U1_TheMythicalMan-Month_EssaySonSoftwareEngineer.pdf</li>
               <li>ISW_Bib_U1_SoftwareEstimationDemystifyingTheBlackArtMicrosoftPress2006.pdf</li>
@@ -272,9 +272,9 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li><strong>/Unidad 2_Gestión Lean Ágil de Productos de Software</strong>
+      <li>/Unidad 2_Gestión Lean Ágil de Productos de Software
         <ul>
-          <li><strong>/Agile</strong>
+          <li>/Agile
             <ul>
               <li>ISW_Bib_U2_AddisonWesleyUserStoriesAppliedForAgileSoftwareDev.pdf</li>
               <li>ISW_Bib_U2_AddisonWesleyUserStoriesAppliedForAgileSoftwareDev.pdf</li>
@@ -283,7 +283,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
               <li>ISW_Bib_U2_ScrumYXpDesdeLasTrincheras.pdf</li>
             </ul>
           </li>
-          <li><strong>/LeanYKanban</strong>
+          <li>/LeanYKanban
             <ul>
               <li>ISW_Bib_U2_EssentialKanbanCondensedSpanish.pdf</li>
               <li>ISW_Bib_U2_ImplementingLeanSoftwareDevelopmentFromConceptToCash.pdf</li>
@@ -297,9 +297,9 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li><strong>/Unidad 3_Gestión del Software como Producto</strong>
+      <li>/Unidad 3_Gestión del Software como Producto
         <ul>
-          <li><strong>/SCM</strong>
+          <li>/SCM
             <ul>
               <li>ISW_Bib_U3_AgileSCM.pdf</li>
               <li>ISW_Bib_U3_LittleBookOfConfigurationManagement.pdf</li>
@@ -308,9 +308,9 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li><strong>/Unidad 4_Aseguramiento de Calidad de Proceso y de Producto</strong>
+      <li>/Unidad 4_Aseguramiento de Calidad de Proceso y de Producto
         <ul>
-          <li><strong>/Testing de Software</strong>
+          <li>/Testing de Software
             <ul>
               <li>ISW_Bib_U4_AgileTestingAPracticalGuideForTestersAndAgileTeams.pdf</li>
               <li>ISW_Bib_U4_IntroducciónALasPruebasDeSistemasDeInformacionAbstractas.pdf</li>
@@ -322,43 +322,43 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
     </ul>
   </li>
-  <li><strong>/ClasesGrabadas</strong>
+  <li>/ClasesGrabadas
     <ul>
       <li>ISW_LinkClasesGrabada_4k2_2020.pdf</li>
       <li>ISW_Links_ClasesInvertidas_4k2_2024.pdf</li>
       <li>ISW_LinksClasesGrabadas_TodosLosCursos_2021.xlsx</li>
     </ul>
   </li>
-  <li><strong>/CronogramaDeClases</strong>
+  <li>/CronogramaDeClases
     <ul>
       <li>ISW_CdC_2024_4k2.pdf</li>
     </ul>
   </li>
-  <li><strong>/GuiasTrabajosPracticosYDeInvestigacion</strong>
+  <li>/GuiasTrabajosPracticosYDeInvestigacion
     <ul>
-      <li><strong>/GuiaTrabajosPracticos</strong>
+      <li>/GuiaTrabajosPracticos
         <ul>
           <li>ISW_Gui_TrabajosPrácticos_C2_2024.pdf</li>
         </ul>
       </li>
-      <li><strong>/GuiaTrabajosPracticosDeInvestigacion</strong>
+      <li>/GuiaTrabajosPracticosDeInvestigacion
         <ul>
           <li>ISW_Gui_TrabajosDeInvestigacion_C2_2024.pdf</li>
         </ul>
       </li>
-      <li><strong>/GuiaTrabajosPracticosResueltos</strong>
+      <li>/GuiaTrabajosPracticosResueltos
         <ul>
           <li>ISW_Gui_TrabajosPracticosResueltos_C2_2024.pdf</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><strong>/MaterialDeApoyo</strong>
+  <li>/MaterialDeApoyo
     <ul>
       <li>ISW_Herramientas_PresentaciónInformacion_2024.pdf</li>
     </ul>
   </li>
-  <li><strong>/MaterialDeClases</strong>
+  <li>/MaterialDeClases
     <ul>
       <li>ISW_01_SCM.pdf</li>
       <li>ISW_02_ReqÁgilesUserStories.pdf</li>
@@ -377,20 +377,20 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>ISW_15_RetrospectivasIntroPráctico.pdf</li>
     </ul>
   </li>
-  <li><strong>/ProgramaDeLaMateria</strong>
+  <li>/ProgramaDeLaMateria
     <ul>
       <li>ISW_PlaniSW_2024.pdf</li>
     </ul>
   </li>
-  <li><strong>/Templates</strong>
+  <li>/Templates
     <ul>
-      <li><strong>/TemplatesParciales</strong>
+      <li>/TemplatesParciales
         <ul>
           <li>ISW_TempParc1_C2_2024.docx</li>
           <li>ISW_TempParc2_C2_2024.docx</li>
         </ul>
       </li>
-      <li><strong>/TemplatesTrabajosPracticos</strong>
+      <li>/TemplatesTrabajosPracticos
         <ul>
           <li>ISW_TempTP_TemplateCasosDePruebaCajaNegra_C2_2024.docx</li>
           <li>ISW_TempTP_TemplateCasosDePruebaYReporteDeBugs_C2_2024.xlsx</li>
@@ -398,19 +398,20 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
     </ul>
   </li>
-  <li><strong>/TrabajosPracticos</strong>
+  <li>/TrabajosPracticos
     <ul>
-      <li><strong>/TrabajosPracticosEvaluables</strong>
+      <li>/TrabajosPracticosEvaluables
         <ul>
           <li>ISW_TPE_Nro1_SCMHerramientasDeSCM_4K2_2024.pdf</li>
         </ul>
       </li>
-      <li><strong>/TrabajosPracticosNoEvaluables</strong></li>
-      <li><strong>/TrabajosPracticosConceptuales</strong></li>
-      <li><strong>/PracticosAdicionales</strong></li>
+      <li>/TrabajosPracticosNoEvaluables</li>
+      <li>/TrabajosPracticosConceptuales</li>
+      <li>/PracticosAdicionales</li>
     </ul>
   </li>
 </ul>
+
 
 
 
