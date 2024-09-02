@@ -239,8 +239,8 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </tr>
     <tr>
       <td>Trabajo Práctico de Investigación</td>
-      <td>ISW_TPI_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoConceptual&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
-      <td>/TrabajosPracticos/TrabajosPracticosConceptuales</td>
+      <td>ISW_TPI_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoPracticoDeInvestigacion&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>/TrabajosPracticos/TrabajosPracticosDeInvestigacion</td>
     </tr>
     <tr>
       <td>Práctico Adicional</td>
