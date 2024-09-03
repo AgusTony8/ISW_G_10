@@ -194,17 +194,17 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </tr>
     <tr>
       <td>Guías de Trabajos Prácticos y de Investigación</td>
-      <td>ISW_Gui_&lt;TipoTrabajo&gt;-&lt;Cuatrimestre&gt;-&lt;Año&gt;.pdf</td>
+      <td>ISW_Gui_&lt;TipoTrabajo&gt;_&lt;Cuatrimestre&gt;_&lt;Año&gt;.pdf</td>
       <td>/GuíasDeTrabajosPracticosYDeInvestigacion/&lt;TipoGuia&gt;/</td>
     </tr>
     <tr>
       <td>Material de Apoyo</td>
-      <td>ISW_&lt;nombre del material&gt;-&lt;año&gt;.&lt;ext&gt;</td>
+      <td>ISW_&lt;nombre del material&gt;_&lt;año&gt;.&lt;ext&gt;</td>
       <td>/ProgramaDeLaMateria</td>
     </tr>
     <tr>
       <td>Material de Clase</td>
-      <td>ISW_&lt;Número de presentación&gt;-&lt;nombre de presentación&gt;.&lt;ext&gt;</td>
+      <td>ISW_&lt;Número de presentación&gt;_&lt;nombre de presentación&gt;.&lt;ext&gt;</td>
       <td>/MaterialDeClases</td>
     </tr>
     <tr>
@@ -219,32 +219,32 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </tr>
     <tr>
       <td>Template Parcial</td>
-      <td>ISW_TempParc_&lt;NroParcial&gt;-&lt;Cuatrimestre&gt;-&lt;Año&gt;.docx</td>
+      <td>ISW_TempParc_&lt;NroParcial&gt;_&lt;Cuatrimestre&gt;_&lt;Año&gt;.docx</td>
       <td>/TemplatesDeTrabajosPracticosYParciales/TemplatesParciales</td>
     </tr>
     <tr>
       <td>Template Trabajo Práctico</td>
-      <td>ISW_TempTP_&lt;NombreTemplate&gt;-&lt;Cuatrimestre&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>ISW_TempTP_&lt;NombreTemplate&gt;_&lt;Cuatrimestre&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
       <td>/TemplatesDeTrabajosPracticosYParciales/TemplatesTrabajosPracticos</td>
     </tr>
     <tr>
       <td>Trabajo Práctico Evaluable</td>
-      <td>ISW_TPE_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoPractico&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>ISW_TPE_Nro&lt;NroTrabajo&gt;_&lt;NombreTrabajoPractico&gt;_&lt;Curso&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
       <td>/TrabajosPracticos/TrabajosPracticosEvaluables</td>
     </tr>
     <tr>
       <td>Trabajo Práctico No Evaluable</td>
-      <td>ISW_TPNE_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoPractico&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>ISW_TPNE_Nro&lt;NroTrabajo&gt;_&lt;NombreTrabajoPractico&gt;_&lt;Curso&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
       <td>/TrabajosPracticos/TrabajosPracticosNoEvaluables</td>
     </tr>
     <tr>
       <td>Trabajo Práctico de Investigación</td>
-      <td>ISW_TPI_Nro&lt;NroTrabajo&gt;-&lt;NombreTrabajoPracticoDeInvestigacion&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>ISW_TPI_Nro&lt;NroTrabajo&gt;_&lt;NombreTrabajoPracticoDeInvestigacion&gt;_&lt;Curso&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
       <td>/TrabajosPracticos/TrabajosPracticosDeInvestigacion</td>
     </tr>
     <tr>
       <td>Práctico Adicional</td>
-      <td>ISW_PA_Nro&lt;NroEjercicio&gt;-&lt;NombreEjercicio&gt;-&lt;Curso&gt;-&lt;Año&gt;.&lt;ext&gt;</td>
+      <td>ISW_PA_Nro&lt;NroEjercicio&gt;_&lt;NombreEjercicio&gt;_&lt;Curso&gt;_&lt;Año&gt;.&lt;ext&gt;</td>
       <td>/TrabajosPracticos/PracticosAdicionales</td>
     </tr>
   </tbody>
@@ -259,11 +259,11 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
         <ul>
           <li>/IngenieríaDeSoftware
             <ul>
-              <li>ISW_Bib_U1_TheMythicalMan-Month_EssaySonSoftwareEngineer.pdf</li>
+              <li>ISW_Bib_U1_TheMythicalMonth_EssaySonSoftwareEngineer.pdf</li>
               <li>ISW_Bib_U1_SoftwareEstimationDemystifyingTheBlackArtMicrosoftPress2006.pdf</li>
               <li>ISW_Bib_U1_SoftwareEngineeringBodyOfKnowledge.pdf</li>
               <li>ISW_Bib_U1_IngenieriaDelSoftwareRogerPressman7maEdicion.pdf</li>
-              <li>ISW_Bib_U1_INGENIERIADESOFTWARE-NovenaEdicionIanSomerville.pdf</li>
+              <li>ISW_Bib_U1_INGENIERIADESOFTWARENovenaEdicionIanSomerville.pdf</li>
               <li>ISW_Bib_U1_CynefinMiniBook.pdf</li>
             </ul>
           </li>
@@ -300,7 +300,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
             <ul>
               <li>ISW_Bib_U3_AgileSCM.pdf</li>
               <li>ISW_Bib_U3_LittleBookOfConfigurationManagement.pdf</li>
-              <li>ISW_Bib_U3_Paper SCM - Berstoff.pdf</li>
+              <li>ISW_Bib_U3_PaperSCMBerstoff.pdf</li>
             </ul>
           </li>
         </ul>
