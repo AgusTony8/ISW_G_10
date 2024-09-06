@@ -9,7 +9,8 @@ de la materia, clases grabadas, material de apoyo y todo el material especificad
 estructura del repositorio.  Se utilizara PascalCase para el nombrado de carpetas e items de configuracion
 
 <h2>Integrantes</h2>
-- 89819, Benjamin Pavon
+
+- 89819, Benjamin Pavon     
 - 90606, Juan Pablo Lambertucci
 - 89978, Maria Paz Costamagna
 - 91185, Cerutti Joaquín
