@@ -391,6 +391,15 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 
+  <strong><br>Resumenes</br></strong>
+  <li>/Resumenes
+    <ul>
+      <li>ISW_Resumen_Completo_2024.pdf</li>
+      <li>ISW_Resumen_P1_2024.pdf</li>
+      <li>ISW_Resumen_P2_2024.pdf</li>
+    </ul>
+  </li>
+
   <strong><br>Templates</strong>
   <li>/TemplatesDeTrabajosPrácticosYParciales
     <ul>
