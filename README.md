@@ -8,6 +8,14 @@ A su vez, presenta el material correspondiente de la cátedra, material bibliogr
 de la materia, clases grabadas, material de apoyo y todo el material especificado en su completitud en la vista de la
 estructura del repositorio.  Se utilizara PascalCase para el nombrado de carpetas e items de configuracion
 
+<h2>Integrantes</h2>
+89819 - Benjamin Pavon
+90606 - Juan Pablo Lambertucci
+89978- Maria Paz Costamagna
+91185 - Cerutti Joaquín
+86203 - Moyano Santiago
+91122 - Schmira Agustín
+
 <h2>Instalacion</h2>
 
 Sigue estos pasos para clonar e instalar el proyecto en tu máquina local:
