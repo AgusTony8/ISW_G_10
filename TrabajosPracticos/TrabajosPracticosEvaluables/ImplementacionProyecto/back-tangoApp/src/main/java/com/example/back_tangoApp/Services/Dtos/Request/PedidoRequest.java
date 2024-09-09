@@ -11,8 +11,8 @@ import java.util.ArrayList;
 @Data
 public class PedidoRequest {
     private Integer tipoDeCarga;
-    private DomicilioRequestDto domicilioRequestDtoRetrio;
-    private DomicilioRequestDto domicilioRequestDtoEntrega;
+    private DomicilioRequestDto domicilioRetiro;
+    private DomicilioRequestDto domicilioEntrega;
     private LocalDate fechaRetiro;
     private LocalDate fechaEntrega;
     private ArrayList<String> urlImagenes;

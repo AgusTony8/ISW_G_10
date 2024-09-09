@@ -8,7 +8,6 @@ import com.example.back_tangoApp.Services.Dtos.Request.EmailRequestDto;
 import com.example.back_tangoApp.Services.Dtos.Request.PedidoRequest;
 import com.example.back_tangoApp.Services.Dtos.Response.PedidoResponseDto;
 import com.example.back_tangoApp.Services.Mappers.PedidoMapper;
-import com.example.back_tangoApp.Services.Mappers.PedidoPostToEntityMapper;
 import com.example.back_tangoApp.WebClients.WebClientEmailSender;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
@@ -28,8 +27,6 @@ public class PedidoService {
 
     private final DadorDeCargaService dadorDeCargaService;
 
-    private final PedidoPostToEntityMapper pedidoPostToEntityMapper;
-
     private final ImagenService imagenService;
 
     private final TransportistasService transportistasService;
@@ -44,17 +41,15 @@ public class PedidoService {
         DadorDeCarga dadorDeCarga = this.dadorDeCargaService.
                 getById(Long.valueOf(pedidoRequest.getDadorDeCarga()));
 
-        Optional<Pedido> pedido = Optional.of(
-                pedidoPostToEntityMapper.apply(pedidoRequest, dadorDeCarga, tipoCarga)
-        );
+        Pedido pedido = this.pedidoMapper.PedidoRequestToEntity(pedidoRequest, tipoCarga, dadorDeCarga);
 
-        this.savePedido(pedido.get());
+        this.savePedido(pedido);
 
-        this.imagenService.addImagenes(pedidoRequest.getUrlImagenes(), pedido.get());
+        this.imagenService.addImagenes(pedidoRequest.getUrlImagenes(), pedido);
 
-        this.sendEmailDadores(pedidoRequest.getDomicilioRequestDtoRetrio().getIdLocalidad());
+        this.sendEmailDadores(pedidoRequest.getDomicilioRetiro().getIdLocalidad());
 
-        return this.getPedidoById(pedido.get().getNum_pedidos());
+        return this.getPedidoById(pedido.getNum_pedidos());
     }
 
     public PedidoResponseDto getPedidoById(Long id) {

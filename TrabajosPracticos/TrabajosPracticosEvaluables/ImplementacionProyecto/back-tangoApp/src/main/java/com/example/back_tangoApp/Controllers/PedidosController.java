@@ -22,6 +22,7 @@ public class PedidosController {
     @PostMapping("/registrar")
     public ResponseEntity<PedidoResponseDto> registrarPedido(@RequestBody PedidoRequest pedidoRequest) {
         try {
+            System.out.println(pedidoRequest);
             PedidoResponseDto result = this.pedidoService.addPedido(pedidoRequest);
             return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (EntityNotFoundException e) {

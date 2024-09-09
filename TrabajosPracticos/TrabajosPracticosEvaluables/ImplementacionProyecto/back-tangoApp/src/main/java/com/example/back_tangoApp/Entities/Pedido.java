@@ -93,20 +93,20 @@ public class Pedido {
         this.dadorDeCarga = dadorDeCarga;
         this.fecRetiro = pedidoRequest.getFechaRetiro();
         this.fecEntrega = pedidoRequest.getFechaEntrega();
-        this.idProvinciaR = pedidoRequest.getDomicilioRequestDtoRetrio().getIdProvincia();
-        this.provincia = pedidoRequest.getDomicilioRequestDtoRetrio().getProvincia();
-        this.idLocalidadR = pedidoRequest.getDomicilioRequestDtoRetrio().getIdLocalidad();
-        this.localidadR = pedidoRequest.getDomicilioRequestDtoRetrio().getLocalidad();
-        this.calleR = pedidoRequest.getDomicilioRequestDtoRetrio().getCalle();
-        this.numeroCalleR = pedidoRequest.getDomicilioRequestDtoRetrio().getNumero();
-        this.referenciaR = pedidoRequest.getDomicilioRequestDtoRetrio().getReferencia();
-        this.idProvinciaE = pedidoRequest.getDomicilioRequestDtoEntrega().getIdProvincia();
-        this.provinciaE = pedidoRequest.getDomicilioRequestDtoEntrega().getProvincia();
-        this.idLocalidadE = pedidoRequest.getDomicilioRequestDtoEntrega().getIdLocalidad();
-        this.localidadE = pedidoRequest.getDomicilioRequestDtoEntrega().getLocalidad();
-        this.calleE = pedidoRequest.getDomicilioRequestDtoEntrega().getCalle();
-        this.numeroCalleE = pedidoRequest.getDomicilioRequestDtoEntrega().getNumero();
-        this.referenciaE = pedidoRequest.getDomicilioRequestDtoEntrega().getReferencia();
+        this.idProvinciaR = pedidoRequest.getDomicilioRetiro().getIdProvincia();
+        this.provincia = pedidoRequest.getDomicilioRetiro().getProvincia();
+        this.idLocalidadR = pedidoRequest.getDomicilioRetiro().getIdLocalidad();
+        this.localidadR = pedidoRequest.getDomicilioRetiro().getLocalidad();
+        this.calleR = pedidoRequest.getDomicilioRetiro().getCalle();
+        this.numeroCalleR = pedidoRequest.getDomicilioRetiro().getNumero();
+        this.referenciaR = pedidoRequest.getDomicilioRetiro().getReferencia();
+        this.idProvinciaE = pedidoRequest.getDomicilioRetiro().getIdProvincia();
+        this.provinciaE = pedidoRequest.getDomicilioRetiro().getProvincia();
+        this.idLocalidadE = pedidoRequest.getDomicilioRetiro().getIdLocalidad();
+        this.localidadE = pedidoRequest.getDomicilioRetiro().getLocalidad();
+        this.calleE = pedidoRequest.getDomicilioRetiro().getCalle();
+        this.numeroCalleE = pedidoRequest.getDomicilioRetiro().getNumero();
+        this.referenciaE = pedidoRequest.getDomicilioRetiro().getReferencia();
     }
 
 }

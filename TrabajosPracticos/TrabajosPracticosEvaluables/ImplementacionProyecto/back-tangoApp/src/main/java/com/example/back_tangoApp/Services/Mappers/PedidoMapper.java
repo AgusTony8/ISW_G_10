@@ -1,9 +1,12 @@
 package com.example.back_tangoApp.Services.Mappers;
 
+import com.example.back_tangoApp.Entities.DadorDeCarga;
 import com.example.back_tangoApp.Entities.Imagen;
 import com.example.back_tangoApp.Entities.Pedido;
+import com.example.back_tangoApp.Entities.TipoCarga;
 import com.example.back_tangoApp.Services.Dtos.PedidoData.DadorDeCargaResponseDto;
 import com.example.back_tangoApp.Services.Dtos.PedidoData.DomicilioResponseDto;
+import com.example.back_tangoApp.Services.Dtos.Request.PedidoRequest;
 import com.example.back_tangoApp.Services.Dtos.Response.PedidoResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +19,14 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Service
 public class PedidoMapper {
+
+    public Pedido PedidoRequestToEntity(PedidoRequest pedidoRequest, TipoCarga tipoCarga, DadorDeCarga dadorDeCarga) {
+        return new Pedido (
+                pedidoRequest,
+                tipoCarga,
+                dadorDeCarga
+        );
+    }
 
     public PedidoResponseDto PedidoEntityToDto(Pedido pedidoEntity) {
         return new PedidoResponseDto(
