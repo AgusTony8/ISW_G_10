@@ -2,6 +2,7 @@ package com.example.back_tangoApp.Entities;
 
 import com.example.back_tangoApp.Services.DadorDeCargaService;
 import com.example.back_tangoApp.Services.Dtos.PedidoRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,13 +45,13 @@ public class Pedido {
     private LocalDate fecEntrega;
 
     @Column(name = "id_provincia_r")
-    private Integer idProvinciaR;
+    private String idProvinciaR;
 
     @Column(name = "provincia_r")
     private String provincia;
 
     @Column(name = "id_localidad_r")
-    private Integer idLocalidadR;
+    private String idLocalidadR;
 
     @Column(name = "localidad_r")
     private String localidadR;
@@ -65,13 +66,13 @@ public class Pedido {
     private String referenciaR;
 
     @Column(name = "id_provincia_e")
-    private Integer idProvinciaE;
+    private String idProvinciaE;
 
     @Column(name = "provincia_e")
     private String provinciaE;
 
     @Column(name = "id_localidad_e")
-    private Integer idLocalidadE;
+    private String idLocalidadE;
 
     @Column(name = "localidad_e")
     private String localidadE;
@@ -98,16 +99,16 @@ public class Pedido {
         this.dadorDeCarga = dadorDeCarga;
         this.fecRetiro = pedidoRequest.getFechaRetiro();
         this.fecEntrega = pedidoRequest.getFechaEntrega();
-        this.idProvinciaR = Integer.parseInt(pedidoRequest.getDomicilioRetrio().getIdProvincia());
+        this.idProvinciaR = pedidoRequest.getDomicilioRetrio().getIdProvincia();
         this.provincia = pedidoRequest.getDomicilioRetrio().getProvincia();
-        this.idLocalidadR = Integer.parseInt(pedidoRequest.getDomicilioRetrio().getIdLocalidad());
+        this.idLocalidadR = pedidoRequest.getDomicilioRetrio().getIdLocalidad();
         this.localidadR = pedidoRequest.getDomicilioRetrio().getLocalidad();
         this.calleR = pedidoRequest.getDomicilioRetrio().getCalle();
         this.numeroCalleR = pedidoRequest.getDomicilioRetrio().getNumero();
         this.referenciaR = pedidoRequest.getDomicilioRetrio().getReferencia();
-        this.idProvinciaE = Integer.parseInt(pedidoRequest.getDomicilioEntrega().getIdProvincia());
+        this.idProvinciaE = pedidoRequest.getDomicilioEntrega().getIdProvincia();
         this.provinciaE = pedidoRequest.getDomicilioEntrega().getProvincia();
-        this.idLocalidadE = Integer.parseInt(pedidoRequest.getDomicilioEntrega().getIdLocalidad());
+        this.idLocalidadE = pedidoRequest.getDomicilioEntrega().getIdLocalidad();
         this.localidadE = pedidoRequest.getDomicilioEntrega().getLocalidad();
         this.calleE = pedidoRequest.getDomicilioEntrega().getCalle();
         this.numeroCalleE = pedidoRequest.getDomicilioEntrega().getNumero();
