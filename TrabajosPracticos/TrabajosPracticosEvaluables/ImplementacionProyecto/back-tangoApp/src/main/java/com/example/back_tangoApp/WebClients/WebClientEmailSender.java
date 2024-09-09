@@ -1,10 +1,7 @@
 package com.example.back_tangoApp.WebClients;
 
-import com.example.back_tangoApp.Services.Dtos.EmailDto;
-import lombok.AllArgsConstructor;
+import com.example.back_tangoApp.Services.Dtos.Request.EmailRequestDto;
 import lombok.NoArgsConstructor;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -19,7 +16,7 @@ public class WebClientEmailSender {
             .baseUrl(baseUrl)
             .build();
 
-    public Mono<String> sendEmail(EmailDto emailDto) {
+    public Mono<String> sendEmail(EmailRequestDto emailRequestDto) {
         return webClient
                 .post()
                 .uri(uriBuilder ->
@@ -27,7 +24,7 @@ public class WebClientEmailSender {
                             .path("/email-server/send/testEmail")
                             .build()
                 )
-                .bodyValue(emailDto)
+                .bodyValue(emailRequestDto)
                 .retrieve()
                 .bodyToMono(String.class)
                 .doOnError(e -> System.out.println("Error al enviar el email"));

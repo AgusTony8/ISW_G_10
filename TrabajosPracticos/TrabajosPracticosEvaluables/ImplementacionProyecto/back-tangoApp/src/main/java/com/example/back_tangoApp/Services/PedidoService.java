@@ -4,8 +4,10 @@ import com.example.back_tangoApp.Entities.DadorDeCarga;
 import com.example.back_tangoApp.Entities.Pedido;
 import com.example.back_tangoApp.Entities.TipoCarga;
 import com.example.back_tangoApp.Repositories.PedidoRepository;
-import com.example.back_tangoApp.Services.Dtos.EmailDto;
-import com.example.back_tangoApp.Services.Dtos.PedidoRequest;
+import com.example.back_tangoApp.Services.Dtos.Request.EmailRequestDto;
+import com.example.back_tangoApp.Services.Dtos.Request.PedidoRequest;
+import com.example.back_tangoApp.Services.Dtos.Response.PedidoResponseDto;
+import com.example.back_tangoApp.Services.Mappers.PedidoMapper;
 import com.example.back_tangoApp.Services.Mappers.PedidoPostToEntityMapper;
 import com.example.back_tangoApp.WebClients.WebClientEmailSender;
 import jakarta.persistence.EntityNotFoundException;
@@ -34,7 +36,9 @@ public class PedidoService {
 
     private final WebClientEmailSender webClientEmailSender;
 
-    public Pedido addPedido(PedidoRequest pedidoRequest) {
+    private final PedidoMapper pedidoMapper;
+
+    public PedidoResponseDto addPedido(PedidoRequest pedidoRequest) {
         TipoCarga tipoCarga = this.tipoCargaService.getById(Long.valueOf(pedidoRequest.getTipoDeCarga()));
 
         DadorDeCarga dadorDeCarga = this.dadorDeCargaService.
@@ -48,17 +52,17 @@ public class PedidoService {
 
         this.imagenService.addImagenes(pedidoRequest.getUrlImagenes(), pedido.get());
 
-        this.sendEmailDadores(pedidoRequest.getDomicilioRetrio().getIdLocalidad());
+        this.sendEmailDadores(pedidoRequest.getDomicilioRequestDtoRetrio().getIdLocalidad());
 
         return this.getPedidoById(pedido.get().getNum_pedidos());
     }
 
-    public Pedido getPedidoById(Long id) {
+    public PedidoResponseDto getPedidoById(Long id) {
         Optional<Pedido> pedido = this.pedidoRepository.findById(id);
         if (pedido.isEmpty())  {
             throw new EntityNotFoundException("Pedido no encontrado");
         };
-        return pedido.get();
+        return pedidoMapper.PedidoEntityToDto(pedido.get());
     }
 
     private void savePedido(Pedido pedido) {
@@ -80,14 +84,14 @@ public class PedidoService {
         String body = "Se ha registrado un nuevo pedido en tu localidad";
         String subject = "Nuevo pedido en tu localidad!";
 
-        EmailDto emailDto = new EmailDto(
+        EmailRequestDto emailRequestDto = new EmailRequestDto(
                 toEmail,
                 subject,
                 body
         );
 
-        System.out.println(emailDto);
-        webClientEmailSender.sendEmail(emailDto).subscribe(
+        System.out.println(emailRequestDto);
+        webClientEmailSender.sendEmail(emailRequestDto).subscribe(
                 response -> System.out.println("Email enviado exitosamente: " + response),
                 error -> System.out.println("Error al enviar el email: " + error.getMessage())
         );

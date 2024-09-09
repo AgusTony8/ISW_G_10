@@ -1,20 +1,14 @@
 package com.example.back_tangoApp.Entities;
 
-import com.example.back_tangoApp.Services.DadorDeCargaService;
-import com.example.back_tangoApp.Services.Dtos.PedidoRequest;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.back_tangoApp.Services.Dtos.Request.PedidoRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Fetch;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -99,20 +93,20 @@ public class Pedido {
         this.dadorDeCarga = dadorDeCarga;
         this.fecRetiro = pedidoRequest.getFechaRetiro();
         this.fecEntrega = pedidoRequest.getFechaEntrega();
-        this.idProvinciaR = pedidoRequest.getDomicilioRetrio().getIdProvincia();
-        this.provincia = pedidoRequest.getDomicilioRetrio().getProvincia();
-        this.idLocalidadR = pedidoRequest.getDomicilioRetrio().getIdLocalidad();
-        this.localidadR = pedidoRequest.getDomicilioRetrio().getLocalidad();
-        this.calleR = pedidoRequest.getDomicilioRetrio().getCalle();
-        this.numeroCalleR = pedidoRequest.getDomicilioRetrio().getNumero();
-        this.referenciaR = pedidoRequest.getDomicilioRetrio().getReferencia();
-        this.idProvinciaE = pedidoRequest.getDomicilioEntrega().getIdProvincia();
-        this.provinciaE = pedidoRequest.getDomicilioEntrega().getProvincia();
-        this.idLocalidadE = pedidoRequest.getDomicilioEntrega().getIdLocalidad();
-        this.localidadE = pedidoRequest.getDomicilioEntrega().getLocalidad();
-        this.calleE = pedidoRequest.getDomicilioEntrega().getCalle();
-        this.numeroCalleE = pedidoRequest.getDomicilioEntrega().getNumero();
-        this.referenciaE = pedidoRequest.getDomicilioEntrega().getReferencia();
+        this.idProvinciaR = pedidoRequest.getDomicilioRequestDtoRetrio().getIdProvincia();
+        this.provincia = pedidoRequest.getDomicilioRequestDtoRetrio().getProvincia();
+        this.idLocalidadR = pedidoRequest.getDomicilioRequestDtoRetrio().getIdLocalidad();
+        this.localidadR = pedidoRequest.getDomicilioRequestDtoRetrio().getLocalidad();
+        this.calleR = pedidoRequest.getDomicilioRequestDtoRetrio().getCalle();
+        this.numeroCalleR = pedidoRequest.getDomicilioRequestDtoRetrio().getNumero();
+        this.referenciaR = pedidoRequest.getDomicilioRequestDtoRetrio().getReferencia();
+        this.idProvinciaE = pedidoRequest.getDomicilioRequestDtoEntrega().getIdProvincia();
+        this.provinciaE = pedidoRequest.getDomicilioRequestDtoEntrega().getProvincia();
+        this.idLocalidadE = pedidoRequest.getDomicilioRequestDtoEntrega().getIdLocalidad();
+        this.localidadE = pedidoRequest.getDomicilioRequestDtoEntrega().getLocalidad();
+        this.calleE = pedidoRequest.getDomicilioRequestDtoEntrega().getCalle();
+        this.numeroCalleE = pedidoRequest.getDomicilioRequestDtoEntrega().getNumero();
+        this.referenciaE = pedidoRequest.getDomicilioRequestDtoEntrega().getReferencia();
     }
 
 }

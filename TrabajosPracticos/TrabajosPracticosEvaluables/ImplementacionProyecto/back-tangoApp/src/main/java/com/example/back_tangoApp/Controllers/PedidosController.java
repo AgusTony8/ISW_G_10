@@ -1,7 +1,8 @@
 package com.example.back_tangoApp.Controllers;
 
 import com.example.back_tangoApp.Entities.Pedido;
-import com.example.back_tangoApp.Services.Dtos.PedidoRequest;
+import com.example.back_tangoApp.Services.Dtos.Request.PedidoRequest;
+import com.example.back_tangoApp.Services.Dtos.Response.PedidoResponseDto;
 import com.example.back_tangoApp.Services.PedidoService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
@@ -10,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/pedidos")
@@ -20,9 +20,9 @@ public class PedidosController {
 
 
     @PostMapping("/registrar")
-    public ResponseEntity<Pedido> registrarPedido(@RequestBody PedidoRequest pedidoRequest) {
+    public ResponseEntity<PedidoResponseDto> registrarPedido(@RequestBody PedidoRequest pedidoRequest) {
         try {
-            Pedido result = this.pedidoService.addPedido(pedidoRequest);
+            PedidoResponseDto result = this.pedidoService.addPedido(pedidoRequest);
             return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -32,9 +32,9 @@ public class PedidosController {
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<Pedido> buscarPedido(@PathVariable Long id) {
+    public ResponseEntity<PedidoResponseDto> buscarPedido(@PathVariable Long id) {
         try {
-            Pedido result = this.pedidoService.getPedidoById(id);
+            PedidoResponseDto result = this.pedidoService.getPedidoById(id);
             return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
