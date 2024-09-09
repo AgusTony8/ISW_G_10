@@ -1,12 +1,17 @@
-package com.example.back_tangoApp.Services.Dtos;
+package server.tango_app_email_server.Services.Dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
+import java.util.ArrayList;
+import java.util.List;
+
 @AllArgsConstructor
-public class EmailDto {
+@Data
+public class TestEmailRequestDto {
+
     private String toEmail;
     private String subject;
     private String body;
+
 }

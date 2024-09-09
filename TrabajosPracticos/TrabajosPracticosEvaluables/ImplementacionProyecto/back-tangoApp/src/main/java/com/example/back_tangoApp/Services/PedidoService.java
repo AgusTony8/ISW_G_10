@@ -4,8 +4,10 @@ import com.example.back_tangoApp.Entities.DadorDeCarga;
 import com.example.back_tangoApp.Entities.Pedido;
 import com.example.back_tangoApp.Entities.TipoCarga;
 import com.example.back_tangoApp.Repositories.PedidoRepository;
+import com.example.back_tangoApp.Services.Dtos.EmailDto;
 import com.example.back_tangoApp.Services.Dtos.PedidoRequest;
 import com.example.back_tangoApp.Services.Mappers.PedidoPostToEntityMapper;
+import com.example.back_tangoApp.WebClients.WebClientEmailSender;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,8 @@ public class PedidoService {
     private final ImagenService imagenService;
 
     private final TransportistasService transportistasService;
+
+    private final WebClientEmailSender webClientEmailSender;
 
     public Pedido addPedido(PedidoRequest pedidoRequest) {
         TipoCarga tipoCarga = this.tipoCargaService.getById(Long.valueOf(pedidoRequest.getTipoDeCarga()));
@@ -66,11 +70,26 @@ public class PedidoService {
         return pedidosDador.get();
     }
 
-    private boolean sendEmailDadores(String idLocalidadRetiro) {
+    private void sendEmailDadores(String idLocalidadRetiro) {
+
         ArrayList<String> emailsTransportistasLocalidadR = transportistasService.getEmailTransportistasByLocalidadId(
                 idLocalidadRetiro
         );
-        System.out.println(emailsTransportistasLocalidadR);
-        return true;
+
+        String toEmail = String.join(", ", emailsTransportistasLocalidadR);
+        String body = "Se ha registrado un nuevo pedido en tu localidad";
+        String subject = "Nuevo pedido en tu localidad!";
+
+        EmailDto emailDto = new EmailDto(
+                toEmail,
+                subject,
+                body
+        );
+
+        System.out.println(emailDto);
+        webClientEmailSender.sendEmail(emailDto).subscribe(
+                response -> System.out.println("Email enviado exitosamente: " + response),
+                error -> System.out.println("Error al enviar el email: " + error.getMessage())
+        );
     }
 }
