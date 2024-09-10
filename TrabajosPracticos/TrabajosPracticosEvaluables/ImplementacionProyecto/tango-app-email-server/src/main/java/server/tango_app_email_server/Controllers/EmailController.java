@@ -20,7 +20,6 @@ public class EmailController {
     public ResponseEntity<String> sendEmail(
             @RequestBody TestEmailRequestDto testEmailRequestDto) {
         try {
-            System.out.println("LLega peticion");
             emailService.sendTestEmail(
                     testEmailRequestDto.getToEmail(),
                     testEmailRequestDto.getSubject(),
