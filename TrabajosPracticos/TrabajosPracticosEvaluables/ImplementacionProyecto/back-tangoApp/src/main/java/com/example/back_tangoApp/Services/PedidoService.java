@@ -95,7 +95,7 @@ public class PedidoService {
                 emailBodyDto
         );
         webClientEmailSender.sendEmail(emailRequestDto).subscribe(
-                response -> System.out.println("Email enviado exitosamente: " + response),
+                response -> System.out.println("Estado del envio: " + response),
                 error -> System.out.println("Error al enviar el email: " + error.getMessage())
         );
     }
