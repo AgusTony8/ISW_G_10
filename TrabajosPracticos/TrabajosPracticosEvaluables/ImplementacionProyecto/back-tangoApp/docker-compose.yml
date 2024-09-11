@@ -3,6 +3,9 @@ services:
   tango-app-api:
     image: tango-app-api
     container_name: tango-app-api
+    build:
+        context: .
+        dockerfile: Dockerfile
     ports:
       - "8080:8080"
     networks:

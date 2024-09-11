@@ -10,6 +10,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import server.tango_app_email_server.Services.Dtos.EmailRequestDto;
 
 @Service
 @AllArgsConstructor
@@ -24,9 +25,23 @@ public class EmailService {
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
 
         helper.setFrom("TangoApp");
-        mimeMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+
         helper.setSubject(subject);
         helper.setText(body, false);
+        mailSender.send(mimeMessage);
+    }
+
+    public void sendPublishEmail(EmailRequestDto emailRequestDto) throws MessagingException {
+
+        BodyStringFormatter bodyStringFormatter = new BodyStringFormatter();
+
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
+
+        helper.setFrom("TangoApp");
+        mimeMessage.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailRequestDto.getToEmail()));
+        helper.setSubject(emailRequestDto.getSubject());
+        helper.setText(bodyStringFormatter.bodyToString(emailRequestDto.getBody()), false);
         mailSender.send(mimeMessage);
     }
 }

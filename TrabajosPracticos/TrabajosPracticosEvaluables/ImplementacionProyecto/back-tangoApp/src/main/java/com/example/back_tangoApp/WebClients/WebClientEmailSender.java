@@ -10,7 +10,8 @@ import reactor.core.publisher.Mono;
 @Service
 public class WebClientEmailSender {
 
-    private final String baseUrl = "http://tango-app-email-server:8082";
+    private final String baseUrl = "http://localhost:8082";
+    //private final String baseUrl = "http://tango-app-email-server:8082";
 
     private final WebClient webClient = WebClient.builder()
             .baseUrl(baseUrl)
@@ -21,7 +22,7 @@ public class WebClientEmailSender {
                 .post()
                 .uri(uriBuilder ->
                     uriBuilder
-                            .path("/email-server/send/testEmail")
+                            .path("/email-server/send/sendPublishPedidoEmail")
                             .build()
                 )
                 .bodyValue(emailRequestDto)

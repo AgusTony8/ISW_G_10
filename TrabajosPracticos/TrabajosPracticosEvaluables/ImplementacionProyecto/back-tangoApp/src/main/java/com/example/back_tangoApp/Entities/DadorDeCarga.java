@@ -31,6 +31,18 @@ public class DadorDeCarga {
     @Column(name = "apellido")
     private String apellido;
 
+    @Column(name = "nro_documento")
+    private String nroDocumento;
+
+    @Column(name = "sexo")
+    private String sexo;
+
+    @Column(name = "nro_telefono")
+    private String nroTelefono;
+
+    @Column(name = "email")
+    private String email;
+
     @OneToMany(mappedBy = "dadorDeCarga")
     @JsonIgnore
     private Set<Pedido> pedidos = new HashSet<>();

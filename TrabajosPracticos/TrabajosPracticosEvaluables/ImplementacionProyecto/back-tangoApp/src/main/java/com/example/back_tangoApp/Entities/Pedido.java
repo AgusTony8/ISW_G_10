@@ -1,6 +1,7 @@
 package com.example.back_tangoApp.Entities;
 
 import com.example.back_tangoApp.Services.Dtos.Request.PedidoRequest;
+import com.example.back_tangoApp.Services.Utils.DateMapper;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -89,10 +90,13 @@ public class Pedido {
             TipoCarga tipoDeCarga,
             DadorDeCarga dadorDeCarga
     ) {
+
+        DateMapper dateMapper = new DateMapper();
+
         this.tipoDeCarga = tipoDeCarga;
         this.dadorDeCarga = dadorDeCarga;
-        this.fecRetiro = pedidoRequest.getFechaRetiro();
-        this.fecEntrega = pedidoRequest.getFechaEntrega();
+        this.fecRetiro = dateMapper.StringToLocalDate(pedidoRequest.getFechaRetiro());
+        this.fecEntrega = dateMapper.StringToLocalDate(pedidoRequest.getFechaEntrega());
         this.idProvinciaR = pedidoRequest.getDomicilioRetiro().getIdProvincia();
         this.provincia = pedidoRequest.getDomicilioRetiro().getProvincia();
         this.idLocalidadR = pedidoRequest.getDomicilioRetiro().getIdLocalidad();

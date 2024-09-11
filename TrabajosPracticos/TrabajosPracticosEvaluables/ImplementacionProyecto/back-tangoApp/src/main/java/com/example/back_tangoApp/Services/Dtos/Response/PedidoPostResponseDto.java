@@ -5,12 +5,11 @@ import com.example.back_tangoApp.Services.Dtos.PedidoData.DomicilioResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor
-public class PedidoResponseDto {
+public class PedidoPostResponseDto {
     private Integer idPedido;
     private String tipoDeCarga;
     private DadorDeCargaResponseDto dadorDeCarga;
@@ -19,4 +18,5 @@ public class PedidoResponseDto {
     private DomicilioResponseDto domicilioRetiro;
     private DomicilioResponseDto domicilioEntrega;
     private ArrayList<String> urlImagenes;
+    private ArrayList<String> transportistasANotificar;
 }

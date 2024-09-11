@@ -13,8 +13,8 @@ public class PedidoRequest {
     private Integer tipoDeCarga;
     private DomicilioRequestDto domicilioRetiro;
     private DomicilioRequestDto domicilioEntrega;
-    private LocalDate fechaRetiro;
-    private LocalDate fechaEntrega;
+    private String fechaRetiro;
+    private String fechaEntrega;
     private ArrayList<String> urlImagenes;
     private Integer dadorDeCarga;
 }

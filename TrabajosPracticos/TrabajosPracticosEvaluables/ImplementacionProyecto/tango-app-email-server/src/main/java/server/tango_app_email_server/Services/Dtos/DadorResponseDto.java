@@ -1,11 +1,11 @@
-package com.example.back_tangoApp.Services.Dtos.PedidoData;
+package server.tango_app_email_server.Services.Dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@AllArgsConstructor
 @Data
-public class DadorDeCargaResponseDto {
+@AllArgsConstructor
+public class DadorResponseDto {
     private String nombre;
     private String apellido;
     private String sexo;

@@ -2,6 +2,7 @@ package com.example.back_tangoApp.Controllers;
 
 import com.example.back_tangoApp.Entities.Pedido;
 import com.example.back_tangoApp.Services.Dtos.Request.PedidoRequest;
+import com.example.back_tangoApp.Services.Dtos.Response.PedidoPostResponseDto;
 import com.example.back_tangoApp.Services.Dtos.Response.PedidoResponseDto;
 import com.example.back_tangoApp.Services.PedidoService;
 import jakarta.persistence.EntityNotFoundException;
@@ -20,10 +21,10 @@ public class PedidosController {
 
 
     @PostMapping("/registrar")
-    public ResponseEntity<PedidoResponseDto> registrarPedido(@RequestBody PedidoRequest pedidoRequest) {
+    public ResponseEntity<PedidoPostResponseDto> registrarPedido(@RequestBody PedidoRequest pedidoRequest) {
         try {
             System.out.println(pedidoRequest);
-            PedidoResponseDto result = this.pedidoService.addPedido(pedidoRequest);
+            PedidoPostResponseDto result = this.pedidoService.addPedido(pedidoRequest);
             return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)

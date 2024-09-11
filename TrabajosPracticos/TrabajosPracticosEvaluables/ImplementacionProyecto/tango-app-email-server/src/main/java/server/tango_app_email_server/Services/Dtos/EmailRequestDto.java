@@ -1,4 +1,4 @@
-package com.example.back_tangoApp.Services.Dtos.Request;
+package server.tango_app_email_server.Services.Dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
