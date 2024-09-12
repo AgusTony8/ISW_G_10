@@ -16,7 +16,6 @@ const Pedido = () => {
     return (
     <div className="container text-center my-4">
       <h2>Publicar Pedido de Envío</h2>
-      
       <div className="text-start mt-4">
         <ListaDesplegable opc={tiposDeCarga} titulo="Seleccione un tipo de carga"></ListaDesplegable>
         <div className="container text-center my-4">
