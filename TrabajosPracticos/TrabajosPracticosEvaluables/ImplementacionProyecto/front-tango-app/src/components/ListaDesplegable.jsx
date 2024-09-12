@@ -14,8 +14,8 @@ const opciones = listaOpc.map(op =>
 return(
         <>  
             <h4>{props.titulo}</h4>
-            <div class="input-group mb-3">
-             <select class="form-select" id="inputGroupSelect01">
+            <div className="input-group mb-3">
+             <select className="form-select" id="inputGroupSelect01" onChange={props.onChange}>
                 {opciones}
             </select>
             </div>
