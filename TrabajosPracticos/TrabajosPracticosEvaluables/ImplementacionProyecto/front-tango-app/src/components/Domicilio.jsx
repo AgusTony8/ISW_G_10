@@ -9,9 +9,7 @@ const Domicilio = () => {
             <input type="text" className="form-control" placeholder="Número" aria-label="Número"></input>
             <div class="form-check mt-4">
             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-            <label className="form-check-label" for="flexCheckDefault">
-                S/N
-            </label>
+            <label className="form-check-label" for="flexCheckDefault"> S/N </label>
             </div>
         </div>
     )
