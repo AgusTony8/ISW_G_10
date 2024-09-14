@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importar estilos de Bootstrap
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { domiciliosService } from '../services/domicilios.service.js';
 
 import InputTexto from './InputTexto.jsx';

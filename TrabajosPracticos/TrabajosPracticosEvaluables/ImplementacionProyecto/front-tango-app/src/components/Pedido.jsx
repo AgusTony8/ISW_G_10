@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importar estilos de Bootstrap
 import Domicilio from './Domicilio';
 import ListaDesplegable from './ListaDesplegable.jsx';
 
