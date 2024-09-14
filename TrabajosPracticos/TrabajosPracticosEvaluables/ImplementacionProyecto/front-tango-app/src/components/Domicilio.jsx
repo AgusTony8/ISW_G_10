@@ -24,12 +24,16 @@ const Domicilio = () => {
         const response = await domiciliosService.LocalidadesPorProvincia(idProvincia);
         setLocalidadesOriginales(response.localidades)
         setLocalidadesFiltradas(response.localidades)
+        setInputLocalidad('')
+        setInputCalle('')
+
     }
 
     async function BuscarCalles(idProvincia, idLocalCensal) {
         const response = await domiciliosService.CallePorProvinciaYLocalidad(idProvincia, idLocalCensal)
-        setCallesOriginales(response.calles)
-        setCallesFiltradas(response.calles)
+        setCallesOriginales(response)
+        setCallesFiltradas(response)
+        setInputCalle('')
     }
     // cargar al "montar" el componente, solo la primera vez (por la dependencia [])
     useEffect(() => {
@@ -127,6 +131,7 @@ const Domicilio = () => {
     // Determinar las clases para el input y el mensaje de error
   const inputClassLocalidad = errorLocalidad ? 'form-control is-invalid' : 'form-control';
   const feedbackClassLocalidad = errorLocalidad ? 'invalid-feedback' : '';
+
    // Manejar la selección de una sugerencia
    const handleSuggestionClickCalle = (calle) => {
     setInputCalle(calle.nombre); // Actualizar el input con el nombre seleccionado
