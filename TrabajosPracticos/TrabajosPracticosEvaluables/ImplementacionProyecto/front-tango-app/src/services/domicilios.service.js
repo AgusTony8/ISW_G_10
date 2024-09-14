@@ -12,8 +12,9 @@ async function LocalidadesPorProvincia(idProvincia) {
 }
 
 async function CallePorProvinciaYLocalidad(idProvincia, id_localCensal){
-  const resp =  await httpService.get(config.urlCalles + '?provincia=' + idProvincia + '&' + 'localidad_censal=' + id_localCensal + '&' + 'max=' + 1000)
-  return resp.data
+  const resp =  await httpService.get(config.urlCalles + '?provincia=' + idProvincia + '&' + 'localidad_censal=' + id_localCensal + '&' + 'max=' + 5000)
+  let callesFiltradas = resp.data.calles.filter(calle => !calle.nombre.toUpperCase().endsWith('S N'));
+  return callesFiltradas
 }
 
 export const domiciliosService = {

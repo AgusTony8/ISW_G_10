@@ -3,9 +3,10 @@ import React from 'react';
 function InputTexto(props){
         return(
             <div>
-                <h5>{props.titulo}</h5>
-                <div className="input-group flex-nowrap">
-                    <input type="text" className={props.valido} value={props.value} placeholder={props.titulo} aria-label={props.lebel} aria-describedby="addon-wrapping" onChange={props.onChange}></input>
+                <div className="input-group">
+                    <input type="text" className={props.valido} value={props.value} placeholder={props.placeholder} aria-label={props.lebel} aria-describedby="addon-wrapping"
+                    onChange={props.onChange} disabled={props.disabled}></input>
+                    {props.error && <div className={props.feedbackClass}>{props.error}</div>} {/* Mostrar el mensaje de error */}
                 </div>
             </div>
         )
