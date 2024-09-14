@@ -9,12 +9,15 @@ const Domicilio = () => {
     const [provincias, setProvincias] = useState([]);
     const [inputLocalidad, setInputLocalidad] = useState("");
     const [inputCalle, setInputCalle] = useState("");
+    const [inputNumero, setInputNumero] = useState("");
     const [localidadesOriginales, setLocalidadesOriginales] = useState([]);
     const [localidadesFiltradas, setLocalidadesFiltradas] = useState([]);
     const [callesOriginales, setCallesOriginales] = useState([]);
     const [callesFiltradas, setCallesFiltradas] = useState([]);
     const [errorLocalidad, setErrorLocalidad] = useState(''); // Estado para el mensaje de error
-    const [errorCalle, setErrorCalle] = useState(''); // Estado para el mensaje de error
+    const [errorCalle, setErrorCalle] = useState('');
+    const [errorNumero, setErrorNumero] = useState('');
+    const [isSnChecked, setIsSnChecked] = useState(false); // Estado para el checkbox S/N
 
 
     async function BuscarLocalidades(idProvincia) {
@@ -92,6 +95,28 @@ const Domicilio = () => {
             }
      }
 
+     function handleInputChangeNumero(event) {
+        const value = event.target.value;
+        
+        // Permitir solo números enteros positivos
+        if (/^\d*$/.test(value)) {
+            setInputNumero(value); // Esta es la función que maneja el estado del input
+            setErrorNumero('')
+        }
+        else if(value.length !== 0) setErrorNumero('Se deben ingresar solo números')
+    }
+
+    const inputClassNumero = errorNumero ? 'form-control is-invalid' : 'form-control';
+    const feedbackClassNumero = errorNumero ? 'invalid-feedback' : '';
+    
+
+    const handleCheckboxChange = (event) => {
+        setIsSnChecked(event.target.checked);
+        if (event.target.checked) {
+            setInputNumero(''); // Limpiar el valor del input número cuando el checkbox está marcado
+        }
+    };
+
   // Manejar la selección de una sugerencia
   const handleSuggestionClickLocalidad = (localidad) => {
     setInputLocalidad(localidad.nombre); // Actualizar el input con el nombre seleccionado
@@ -115,8 +140,9 @@ const Domicilio = () => {
         <>
             <ListaDesplegable opc={provinciasSelect} titulo="Seleccione una provincia" onChange={handleProvinciaChange}></ListaDesplegable>
             <div>
-                <InputTexto titulo="Localidad" value={inputLocalidad} label="Localidad" onChange={handleInputChangeLocalidad} valido={inputClassLocalidad}></InputTexto>
-                {errorLocalidad && <div className={feedbackClassLocalidad}>{errorLocalidad}</div>} {/* Mostrar el mensaje de error */}
+                <h5>Localidad</h5>
+                <InputTexto placeholder="Localidad" value={inputLocalidad} label="Localidad" onChange={handleInputChangeLocalidad} valido={inputClassLocalidad}
+                error={errorLocalidad} feedbackClass={feedbackClassLocalidad} disabled={false}></InputTexto>
                 <ListaSugerencias
                 items={localidadesFiltradas} // Pasar las localidades filtradas
                 getKey={(localidad) => localidad.id} // Función para obtener el key (id)
@@ -125,16 +151,31 @@ const Domicilio = () => {
                 />
             </div>
             <h5>Direccion</h5>
-            <div className="input-group mb-3">
-                <input type="text" className={inputClassCalle} placeholder="Calle" value={inputCalle} onChange={handleInputChangeCalle} aria-label="Calle"></input>
-                {errorCalle && <div className={feedbackClassCalle}>{errorCalle}</div>} {/* Mostrar el mensaje de error */}
+            <div className="input-group row mb-3">
+                <div className='col-md-9'>
+                <InputTexto placeholder="Calle" value={inputCalle} label="Calle" onChange={handleInputChangeCalle} valido={inputClassCalle}
+                error={errorCalle} feedbackClass={feedbackClassCalle} disabled={false}></InputTexto>
+                </div>
                 <ListaSugerencias
                 items={callesFiltradas} // Pasar las localidades filtradas
                 getKey={(calle) => calle.id} // Función para obtener el key (id)
                 getDisplayValue={(calle) => calle.nombre} // Función para obtener el nombre a mostrar
                 onItemClick={handleSuggestionClickCalle} // Función para manejar el clic en la sugerencia
                 />
-                <input type="text" className="form-control" placeholder="Número" aria-label="Número"></input>
+                <div className='col-md-3'>
+                <InputTexto placeholder="Número" value={inputNumero} label="Número" onChange={handleInputChangeNumero} valido={inputClassNumero}
+                error={errorNumero} feedbackClass={feedbackClassNumero} disabled={isSnChecked}></InputTexto>
+                <div className="form-check mt-2">
+                    <input 
+                        type="checkbox" 
+                        className="form-check-input" 
+                        id="snCheckbox" 
+                        checked={isSnChecked} 
+                        onChange={handleCheckboxChange}
+                    />
+                    <label className="form-check-label" htmlFor="snCheckbox">S/N</label>
+                </div>
+                </div>
             </div>
             <div className="form-floating">
                 <textarea 
