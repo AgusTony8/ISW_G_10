@@ -7,7 +7,7 @@ function InputTexto(props){
             <div>
                 <h5>{props.titulo}</h5>
                 <div className="input-group flex-nowrap">
-                    <input type="text" className="form-control" placeholder={props.titulo} aria-label={props.lebel} aria-describedby="addon-wrapping" onChange={props.onChange}></input>
+                    <input type="text" className={props.valido} value={props.value} placeholder={props.titulo} aria-label={props.lebel} aria-describedby="addon-wrapping" onChange={props.onChange}></input>
                 </div>
             </div>
         )

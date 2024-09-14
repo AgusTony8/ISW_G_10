@@ -5,28 +5,42 @@ import { domiciliosService } from '../services/domicilios.service.js';
 
 import InputTexto from './InputTexto.jsx';
 import ListaDesplegable from './ListaDesplegable.jsx';
+import ListaSugerencias from './ListaSugerencias.jsx';
 
 const Domicilio = () => {
-    const [datosProvincias, setProvincias] = useState({ provincias: [] });
-    const [inputValue, setInputValue] = useState("");
-    const [datoslocalidades, setLocalidades] = useState([]);
-    
+    const [provincias, setProvincias] = useState([]);
+    const [inputLocalidad, setInputLocalidad] = useState("");
+    const [inputCalle, setInputCalle] = useState("");
+    const [localidadesOriginales, setLocalidadesOriginales] = useState([]);
+    const [localidadesFiltradas, setLocalidadesFiltradas] = useState([]);
+    const [callesOriginales, setCallesOriginales] = useState([]);
+    const [callesFiltradas, setCallesFiltradas] = useState([]);
+    const [errorLocalidad, setErrorLocalidad] = useState(''); // Estado para el mensaje de error
+    const [errorCalle, setErrorCalle] = useState(''); // Estado para el mensaje de error
+
+
     async function BuscarLocalidades(idProvincia) {
         const response = await domiciliosService.LocalidadesPorProvincia(idProvincia);
-        setLocalidades(response)
+        setLocalidadesOriginales(response.localidades)
+        setLocalidadesFiltradas(response.localidades)
     }
 
+    async function BuscarCalles(idProvincia, idLocalCensal) {
+        const response = await domiciliosService.CallePorProvinciaYLocalidad(idProvincia, idLocalCensal)
+        setCallesOriginales(response.calles)
+        setCallesFiltradas(response.calles)
+    }
     // cargar al "montar" el componente, solo la primera vez (por la dependencia [])
     useEffect(() => {
         async function BuscarProvincias() {
         const response = await domiciliosService.ObtenerProvincias();
-        setProvincias(response);
+        setProvincias(response.provincias);
         }
         BuscarProvincias()
     }, []);
 
 
-    const provincias = datosProvincias.provincias.map( provincia => ({
+    const provinciasSelect = provincias.map( provincia => ({
         val: provincia.id,
         text: provincia.nombre
     }))
@@ -36,48 +50,92 @@ const Domicilio = () => {
         BuscarLocalidades(idProvincia)
       };
 
-    const handleInputChange = (event) => {
-        const value = event.target.value;
-        setInputValue(value);
+    const handleInputChangeLocalidad = (event) => {
+        let value = event.target.value;
+        setInputLocalidad(value);
+        if (localidadesFiltradas && Array.isArray(localidadesFiltradas)) {
+            // Si hay un valor en el input, filtrar las localidades
+            const filtrado = localidadesOriginales.filter(localidad =>
+                localidad.nombre.toLowerCase().startsWith(value.toLowerCase())
+            )
+            setLocalidadesFiltradas(filtrado);
+            if (filtrado.length === 0) {
+                 setErrorLocalidad('No se encontró la localidad.');
+            } else {
+                setErrorLocalidad(''); // Limpiar el mensaje de error si hay resultados
+            }
+        }
+        else if (value.length === 0){
+                // Si el input está vacío, restablecer todas las localidades
+                setLocalidadesFiltradas(localidadesOriginales);
+                setErrorLocalidad(''); // Limpiar el mensaje de error
+            }
+     }
 
-        // Filtrar localidades por nombre
-        if (value.length > 0 && datoslocalidades && Array.isArray(datoslocalidades.localidades)) {
-        console.log(datoslocalidades)
-        const filtrado = datoslocalidades.localidades.filter(localidad =>
-            localidad.nombre.toLowerCase().includes(value.toLowerCase())
-        );
-        setLocalidades(filtrado);
-        };
-    }
+     const handleInputChangeCalle = (event) => {
+        let value = event.target.value;
+        setInputCalle(value);
+        if (callesFiltradas && Array.isArray(callesFiltradas)) {
+            // Si hay un valor en el input, filtrar las localidades
+            const filtrado = callesOriginales.filter(calle =>
+                calle.nombre.toLowerCase().startsWith(value.toLowerCase())
+            )
+            setCallesFiltradas(filtrado);
+            if (filtrado.length === 0) {
+                setErrorCalle('No se encontró la calle.');
+           } else {
+               setErrorCalle(''); // Limpiar el mensaje de error si hay resultados
+           }
+        }
+        else if (value.length === 0){
+                // Si el input está vacío, restablecer todas las localidades
+                setCallesFiltradas(callesOriginales);
+                setErrorCalle(''); // Limpiar el mensaje de error
+            }
+     }
 
-    // Manejar la selección de una sugerencia
-  const handleSuggestionClick = (localidad) => {
-    setInputValue(localidad.nombre); // Actualizar el input con el nombre seleccionado
-    setLocalidades([]); // Ocultar la lista de sugerencias
+  // Manejar la selección de una sugerencia
+  const handleSuggestionClickLocalidad = (localidad) => {
+    setInputLocalidad(localidad.nombre); // Actualizar el input con el nombre seleccionado
+    BuscarCalles(localidad.provincia.id, localidad.localidad_censal.id)
+    setLocalidadesFiltradas([]); // Ocultar la lista de sugerencias
+    setErrorLocalidad(''); // Limpiar el mensaje de error al seleccionar una localidad
     };
+    // Determinar las clases para el input y el mensaje de error
+  const inputClassLocalidad = errorLocalidad ? 'form-control is-invalid' : 'form-control';
+  const feedbackClassLocalidad = errorLocalidad ? 'invalid-feedback' : '';
+   // Manejar la selección de una sugerencia
+   const handleSuggestionClickCalle = (calle) => {
+    setInputCalle(calle.nombre); // Actualizar el input con el nombre seleccionado
+    setCallesFiltradas([]); // Ocultar la lista de sugerencias
+    setErrorCalle(''); // Limpiar el mensaje de error
+    };
+    const inputClassCalle = errorCalle ? 'form-control is-invalid' : 'form-control';
+    const feedbackClassCalle = errorCalle ? 'invalid-feedback' : '';
 
     return (
         <>
-            <ListaDesplegable opc={provincias} titulo="Seleccione una provincia" onChange={handleProvinciaChange}></ListaDesplegable>
+            <ListaDesplegable opc={provinciasSelect} titulo="Seleccione una provincia" onChange={handleProvinciaChange}></ListaDesplegable>
             <div>
-                <InputTexto titulo="Localidad" value={inputValue} label="Localidad" onChange={handleInputChange}></InputTexto>
-                {/* Lista de sugerencias */}
-                {datoslocalidades.length > 0 && (
-                    <ul className="suggestions-list">
-                    {datoslocalidades.map(localidad => (
-                        <li
-                        key={localidad.id}
-                        onClick={() => handleSuggestionClick(localidad)}
-                        >
-                        {localidad.nombre}
-                        </li>
-                    ))}
-                    </ul>
-                )}
+                <InputTexto titulo="Localidad" value={inputLocalidad} label="Localidad" onChange={handleInputChangeLocalidad} valido={inputClassLocalidad}></InputTexto>
+                {errorLocalidad && <div className={feedbackClassLocalidad}>{errorLocalidad}</div>} {/* Mostrar el mensaje de error */}
+                <ListaSugerencias
+                items={localidadesFiltradas} // Pasar las localidades filtradas
+                getKey={(localidad) => localidad.id} // Función para obtener el key (id)
+                getDisplayValue={(localidad) => localidad.nombre} // Función para obtener el nombre a mostrar
+                onItemClick={handleSuggestionClickLocalidad} // Función para manejar el clic en la sugerencia
+                />
             </div>
             <h5>Direccion</h5>
             <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Calle" aria-label="Calle"></input>
+                <input type="text" className={inputClassCalle} placeholder="Calle" value={inputCalle} onChange={handleInputChangeCalle} aria-label="Calle"></input>
+                {errorCalle && <div className={feedbackClassCalle}>{errorCalle}</div>} {/* Mostrar el mensaje de error */}
+                <ListaSugerencias
+                items={callesFiltradas} // Pasar las localidades filtradas
+                getKey={(calle) => calle.id} // Función para obtener el key (id)
+                getDisplayValue={(calle) => calle.nombre} // Función para obtener el nombre a mostrar
+                onItemClick={handleSuggestionClickCalle} // Función para manejar el clic en la sugerencia
+                />
                 <input type="text" className="form-control" placeholder="Número" aria-label="Número"></input>
             </div>
             <div className="form-floating">
