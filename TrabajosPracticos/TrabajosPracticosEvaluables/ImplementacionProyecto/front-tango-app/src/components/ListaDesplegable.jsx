@@ -6,7 +6,7 @@ function ListaDesplegable(props){
 const listaOpc = props.opc
 
 const opciones = listaOpc.map(op => 
-    <option key={op.val} value={op.val}>{op.text}</option>
+    <option key={op.val} value={op.val} nombre={op.text}>{op.text}</option>
 )
     
 return(

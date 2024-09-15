@@ -4,8 +4,10 @@ import InputTexto from './InputTexto.jsx';
 import ListaDesplegable from './ListaDesplegable.jsx';
 import ListaSugerencias from './ListaSugerencias.jsx';
 
-const Domicilio = ({onFechaChange}) => {
+const Domicilio = ({onFechaChange,  onDomicilioChange,
+    isDomicilioEnvio = false}) => {
     const [provincias, setProvincias] = useState([]);
+    const [provincia, setProvincia] = useState(null);
     const [inputLocalidad, setInputLocalidad] = useState("");
     const [inputCalle, setInputCalle] = useState("");
     const [inputNumero, setInputNumero] = useState("");
@@ -17,6 +19,9 @@ const Domicilio = ({onFechaChange}) => {
     const [errorCalle, setErrorCalle] = useState('');
     const [errorNumero, setErrorNumero] = useState('');
     const [isSnChecked, setIsSnChecked] = useState(false); // Estado para el checkbox S/N
+    const [idProvincia, setIdProvincia] = useState(null);
+    const [idLocalidad, setIdLocalidad] = useState(null);
+    const [referencia, setReferencia] = useState(""); // Estado para referencia
 
   async function BuscarLocalidades(idProvincia) {
     const response = await domiciliosService.LocalidadesPorProvincia(idProvincia);
@@ -48,6 +53,9 @@ const Domicilio = ({onFechaChange}) => {
 
   const handleProvinciaChange = (event) => {
     const idProvincia = event.target.value;
+    const provincia = event.target.options[event.target.selectedIndex].text
+    setIdProvincia(idProvincia)
+    setProvincia(provincia)
     BuscarLocalidades(idProvincia);
   };
 
@@ -112,10 +120,17 @@ const Domicilio = ({onFechaChange}) => {
         }
     };
 
+     // Manejar el cambio de la referencia
+     const handleReferenciaChange = (event) => {
+        console.log(event.target.value)
+        setReferencia(event.target.value);
+    };
+
   // Manejar la selección de una sugerencia
   const handleSuggestionClickLocalidad = (localidad) => {
     setInputLocalidad(localidad.nombre);
     BuscarCalles(localidad.provincia.id, localidad.localidad_censal.id);
+    setIdLocalidad(localidad.id)
     setLocalidadesFiltradas([]);
     setErrorLocalidad('');
   };
@@ -128,8 +143,23 @@ const Domicilio = ({onFechaChange}) => {
 
   const handleFechaChange = (event) => {
     const selectedDate = event.target.value;
-    onFechaChange(selectedDate);
+    onFechaChange(selectedDate, isDomicilioEnvio);
   };
+
+  useEffect(() => {
+    if (onDomicilioChange) {
+        onDomicilioChange({
+            provincia: provincia,
+            idProvincia: idProvincia,
+            localidad: inputLocalidad,
+            idLocalidad: idLocalidad,
+            calle: inputCalle,
+            numero: inputNumero,
+            referencia: referencia
+        });
+    }
+}, [inputLocalidad, inputCalle, inputNumero, isSnChecked, referencia]);
+
 
   const inputClassLocalidad = errorLocalidad ? 'form-control is-invalid' : 'form-control';
   const feedbackClassLocalidad = errorLocalidad ? 'invalid-feedback' : '';
@@ -182,10 +212,12 @@ const Domicilio = ({onFechaChange}) => {
                 <textarea 
                     className="form-control" 
                     placeholder="Leave a comment here" 
-                    id="floatingTextarea2" 
+                    id={`floatingTextarea-${isDomicilioEnvio ? 'envio' : 'retiro'}`} // ID dinámico
+                    value={referencia}
                     style={{ height: '100px' }}
+                    onChange={handleReferenciaChange}
                 ></textarea>
-                <label htmlFor="floatingTextarea2">Referencia</label>
+                <label htmlFor={`floatingTextarea-${isDomicilioEnvio ? 'envio' : 'retiro'}`}>Referencia</label>
             </div>
             <h5>Fecha</h5>
             <input type="date" className="form-control" placeholder="Fecha de retiro" aria-label="Fecha Retiro" onChange={handleFechaChange}></input>

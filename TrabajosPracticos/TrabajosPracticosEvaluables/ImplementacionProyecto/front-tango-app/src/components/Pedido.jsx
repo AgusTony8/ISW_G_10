@@ -13,6 +13,32 @@ const Pedido = () => {
   const [fechaRetiro, setFechaRetiro] = useState('');
   const [fechaEnvio, setFechaEnvio] = useState('');
   const [errorFecha, setErrorFecha] = useState('');
+  const [tipoDeCargaSeleccionado, setTipoDeCargaSeleccionado] = useState('');
+  const [domicilioRetiro, setDomicilioRetiro] = useState({});
+  const [domicilioEnvio, setDomicilioEnvio] = useState({});
+
+
+  const handleChangeTipoCarga = (event) => {
+    // Llama a la función pasada por props para notificar el cambio
+        setTipoDeCargaSeleccionado(event.target.value)
+  };
+
+  const handleDomicilioChange = (domicilio, isEnvio = false) => {
+    if (isEnvio) {
+        setDomicilioEnvio(domicilio);
+    } else {
+        setDomicilioRetiro(domicilio);
+    }
+};
+
+  const handleFechaChange = (fecha, isEnvio = false) => {
+    if (isEnvio) {
+      setFechaEnvio(fecha);
+    } else {
+      setFechaRetiro(fecha);
+    }
+  };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,10 +47,19 @@ const Pedido = () => {
       setErrorFecha('La fecha de retiro debe ser anterior a la fecha de envío.');
     } else {
       setErrorFecha('');
+      // Crea el objeto JSON con el valor del tipo de carga seleccionado
+      const data = {
+        "tipoDeCarga": tipoDeCargaSeleccionado,
+        "domicilio Retiro": domicilioRetiro,
+        "domicilio Envio": domicilioEnvio,
+        "fechaRetiro": fechaRetiro,
+        "fechaEnvio": fechaEnvio
+      };
       // Submit the form or perform further actions
-      console.log('Form submitted with valid dates');
+      console.log('Form submitted with valid dates', data);
     }
   };
+
 
   return (
     <div className="container text-center my-4">
@@ -32,18 +67,18 @@ const Pedido = () => {
         <h2>Publicar Pedido de Envío</h2>
 
         <div className="text-start mt-4">
-          <ListaDesplegable opc={tiposDeCarga} titulo="Seleccione un tipo de carga"></ListaDesplegable>
+          <ListaDesplegable opc={tiposDeCarga} titulo="Seleccione un tipo de carga" onChange={handleChangeTipoCarga}></ListaDesplegable>
 
           <div className="container my-4">
             <h3>Datos del Retiro</h3>
             <h4>Ingrese los datos del domicilio de retiro</h4>
-            <Domicilio onFechaChange={setFechaRetiro} />
+            <Domicilio onFechaChange={(fecha) => handleFechaChange(fecha)} onDomicilioChange={(domicilio) => handleDomicilioChange(domicilio)}/>
           </div>
 
           <div className="container my-4">
             <h3>Datos del Envio</h3>
             <h4>Ingrese los datos del domicilio de envio</h4>
-            <Domicilio onFechaChange={setFechaEnvio} />
+            <Domicilio onFechaChange={(fecha) => handleFechaChange(fecha, true)} onDomicilioChange={(domicilio) => handleDomicilioChange(domicilio, true)}/>
           </div>
 
           {errorFecha && <div className="alert alert-danger">{errorFecha}</div>}
