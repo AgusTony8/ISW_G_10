@@ -101,9 +101,8 @@ const Domicilio = ({onFechaChange,  onDomicilioChange,
     function handleInputChangeNumero(event) {
         const value = event.target.value;
         
-        // Permitir solo números enteros positivos
         if (/^\d*$/.test(value)) {
-            setInputNumero(value); // Esta es la función que maneja el estado del input
+            setInputNumero(value);
             setErrorNumero('')
         }
         else if(value.length !== 0) setErrorNumero('Se deben ingresar solo números')
@@ -116,13 +115,12 @@ const Domicilio = ({onFechaChange,  onDomicilioChange,
     const handleCheckboxChange = (event) => {
         setIsSnChecked(event.target.checked);
         if (event.target.checked) {
-            setInputNumero(''); // Limpiar el valor del input número cuando el checkbox está marcado
+            setInputNumero('');
         }
     };
 
      // Manejar el cambio de la referencia
      const handleReferenciaChange = (event) => {
-        console.log(event.target.value)
         setReferencia(event.target.value);
     };
 
