@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 @RestController
@@ -29,6 +30,10 @@ public class PedidosController {
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .header("error-message", e.getMessage())
+                    .build();
+        } catch (DateTimeParseException e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .header("error-message", "Se espera fecha en formato dd/mm/aaaa")
                     .build();
         }
     }
