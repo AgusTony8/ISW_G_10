@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Domicilio from './Domicilio';
 import ListaDesplegable from './ListaDesplegable.jsx';
+import '../styles/formStyles.css'
 
 let tiposDeCarga = [
   { val: 1, text: "Documentacion" },
@@ -63,35 +64,38 @@ const Pedido = () => {
 
   return (
     <div className="container text-center my-4">
+      <h2 id="titulo">Publicar Pedido de Envío</h2>
       <form onSubmit={handleSubmit}>
-        <h2>Publicar Pedido de Envío</h2>
-
         <div className="text-start mt-4">
           <ListaDesplegable opc={tiposDeCarga} titulo="Seleccione un tipo de carga" onChange={handleChangeTipoCarga}></ListaDesplegable>
-
-          <div className="container my-4">
+          
+          <hr></hr>
+          <div className="container my-4" id="cont-datos">
             <h3>Datos del Retiro</h3>
-            <h4>Ingrese los datos del domicilio de retiro</h4>
             <Domicilio onFechaChange={(fecha) => handleFechaChange(fecha)} onDomicilioChange={(domicilio) => handleDomicilioChange(domicilio)}/>
           </div>
-
-          <div className="container my-4">
+          <hr></hr>
+          <div className="container my-4" id="cont-datos">
             <h3>Datos del Envio</h3>
-            <h4>Ingrese los datos del domicilio de envio</h4>
             <Domicilio onFechaChange={(fecha) => handleFechaChange(fecha, true)} onDomicilioChange={(domicilio) => handleDomicilioChange(domicilio, true)}/>
           </div>
 
           {errorFecha && <div className="alert alert-danger">{errorFecha}</div>}
-
-          <h5>Imagen del producto</h5>
+        
+          <hr></hr>
+          <h5 id='label-imagen'>Imagen del producto</h5>
           <div className="input-group">
             <input type="file" className="form-control" id="Imagenes" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
           </div>
-
-          <button type="submit" className="btn btn-primary btn-lg">Aceptar</button>
-          <button type="button" className="btn btn-primary btn-lg">Cancelar</button>
-        </div>
+            <div className='buttons'>
+              <button type="submit" className="btn btn-primary btn-lg">Aceptar</button>
+              <button type="button" className="btn btn-primary btn-lg">Cancelar</button>
+              
+            </div>
+          </div>
+          
       </form>
+      <footer></footer>
     </div>
   );
 };

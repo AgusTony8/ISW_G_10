@@ -1,0 +1,88 @@
+body {
+    background-color: #b6d1df;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    padding: 30px 25px 0px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px #a7a6a6ad, -7px 0px 10px #a7a6a6ad;
+}
+
+#titulo{
+    color: #0077B6;
+    font-weight: 800;
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+#cont-datos{
+    display: flex;
+    flex-direction: column;
+    gap:7px;
+    padding: 10px 0px;;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+#cont-datos h3{
+    align-self: center;
+    font-weight: 600;
+    font-size: 30px
+}
+
+#cont-datos h5{
+    margin: 1px 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content:center;
+    gap :20px;
+    margin:20px 0px
+}
+
+.buttons button{
+    background-color: #0077B6;
+    flex-grow: 1;
+    padding: 15px 25px;
+    font-size: 25px;
+    font-weight: 700;
+    box-shadow: 3px 4px 5px #03055ead
+}
+
+.buttons button:hover{
+    box-shadow: 5px 6px 5px #242424bd;
+    background-color: #03045E;
+    border :0px;
+}
+
+
+form hr{
+    border: 1.5px solid #03045E;
+}
+
+footer{
+    height: 20px;
+    width: auto;
+}
+
+#contenedor-nav{
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+#contenedor-nav h4{
+align-self: baseline;
+  margin: 0px;
+}
+
+#label-imagen{
+    margin-top: 15px;
+}
+
+#Imagenes{
+    
+}
