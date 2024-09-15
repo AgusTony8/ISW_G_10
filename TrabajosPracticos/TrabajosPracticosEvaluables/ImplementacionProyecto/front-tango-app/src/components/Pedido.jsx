@@ -17,6 +17,7 @@ const Pedido = () => {
   const [tipoDeCargaSeleccionado, setTipoDeCargaSeleccionado] = useState('');
   const [domicilioRetiro, setDomicilioRetiro] = useState({});
   const [domicilioEnvio, setDomicilioEnvio] = useState({});
+  const [images, setImages] = useState([]);
 
 
   const handleChangeTipoCarga = (event) => {
@@ -40,6 +41,34 @@ const Pedido = () => {
     }
   };
 
+
+  const handleImageUpload = (event) => {
+    const files = Array.from(event.target.files);
+    const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
+    if (images.length + files.length > 3) {
+      alert('Solo puedes subir un máximo de 3 imágenes en total.');
+      return;
+    }
+
+    const newImages = files.filter((file) => {
+      if (!validImageTypes.includes(file.type)) {
+        alert('Solo se permiten archivos de imagen (JPEG, PNG, GIF).');
+        return false;
+      }
+      if (file.size > 10 * 1024 * 1024) {
+        alert('Cada imagen debe ser menor a 10MB.');
+        return false;
+      }
+      return true;
+    });
+
+    setImages((prevImages) => [...prevImages, ...newImages].slice(0, 3)); // Limita a 3 imágenes
+  };
+
+  const handleImageRemove = (index) => {
+    setImages(images.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -84,9 +113,22 @@ const Pedido = () => {
         
           <hr></hr>
           <h5 id='label-imagen'>Imagen del producto</h5>
-          <div className="input-group">
-            <input type="file" className="form-control" id="Imagenes" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
+          <label htmlFor="Imagenes" className="custom-file-upload btn btn-outline-primary">
+            Subir Imágenes
+          </label>
+            <input type="file" id="Imagenes" onChange={handleImageUpload} multiple style={{display: 'none'}}/>
+          <div className="image-preview">
+        {images.map((image, index) => (
+          <div key={index} className="image-container">
+            <img
+              src={URL.createObjectURL(image)}
+              alt={`imagen-${index}`}
+              style={{ width: '100px', height: '100px' }}
+            />
+            <button type='button' className='btn btn-outline-danger' onClick={() => handleImageRemove(index)}>Eliminar</button>
           </div>
+        ))}
+      </div>
             <div className='buttons'>
               <button type="submit" className="btn btn-primary btn-lg">Aceptar</button>
               <button type="button" className="btn btn-primary btn-lg">Cancelar</button>

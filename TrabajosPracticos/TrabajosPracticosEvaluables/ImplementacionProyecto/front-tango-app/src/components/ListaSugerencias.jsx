@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/ListaSugerencias.styles.css'
+import '../styles/ListaSugerenciasStyles.css'
 
 const ListaSugerencias = ({ items, getKey, getDisplayValue, onItemClick }) => {
   return (
