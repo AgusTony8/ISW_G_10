@@ -50,10 +50,10 @@ const Pedido = () => {
       // Crea el objeto JSON con el valor del tipo de carga seleccionado
       const data = {
         "tipoDeCarga": tipoDeCargaSeleccionado,
-        "domicilio Retiro": domicilioRetiro,
-        "domicilio Envio": domicilioEnvio,
+        "domicilioRetiro": domicilioRetiro,
+        "domicilioEntrega": domicilioEnvio,
         "fechaRetiro": fechaRetiro,
-        "fechaEnvio": fechaEnvio
+        "fechaEntrega": fechaEnvio
       };
       // Submit the form or perform further actions
       console.log('Form submitted with valid dates', data);

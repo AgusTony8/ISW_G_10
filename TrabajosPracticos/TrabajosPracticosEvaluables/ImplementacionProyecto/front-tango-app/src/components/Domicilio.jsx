@@ -158,7 +158,7 @@ const Domicilio = ({onFechaChange,  onDomicilioChange,
             referencia: referencia
         });
     }
-}, [inputLocalidad, inputCalle, inputNumero, isSnChecked, referencia]);
+}, [idProvincia, idLocalidad, provincia, inputLocalidad, inputCalle, inputNumero, isSnChecked, referencia]);
 
 
   const inputClassLocalidad = errorLocalidad ? 'form-control is-invalid' : 'form-control';
