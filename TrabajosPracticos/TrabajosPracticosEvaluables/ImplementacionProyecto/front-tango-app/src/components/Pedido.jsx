@@ -4,6 +4,7 @@ import ListaDesplegable from './ListaDesplegable.jsx';
 import '../styles/formStyles.css'
 import appFirebase from "../credenciales.js";
 import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
+import { pedidosService } from '../services/pedidos.service.js';
 
 const storage = getStorage(appFirebase);
 
@@ -118,6 +119,12 @@ const Pedido = () => {
   };
 
 
+  const PublicarPedido = async (pedido) => {
+    const response = await pedidosService.RegistrarPedido(pedido)
+    console.log(pedido)
+    console.log(response)
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -148,10 +155,10 @@ const Pedido = () => {
         "domicilioEntrega": domicilioEnvio,
         "fechaRetiro": formatDate(fechaRetiro),
         "fechaEntrega": formatDate(fechaEnvio),
-        "urlImagenes": urls
+        "urlImagenes": urls,
+        "dadorDeCarga": 1
       };
-      console.log(urls)
-      console.log('Form submitted with valid dates', data);
+      PublicarPedido(data)
     }
   };
 
