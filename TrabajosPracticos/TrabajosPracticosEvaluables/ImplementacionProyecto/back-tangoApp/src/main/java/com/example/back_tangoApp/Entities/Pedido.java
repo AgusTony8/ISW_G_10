@@ -95,8 +95,10 @@ public class Pedido {
 
         this.tipoDeCarga = tipoDeCarga;
         this.dadorDeCarga = dadorDeCarga;
+
         this.fecRetiro = dateMapper.StringToLocalDate(pedidoRequest.getFechaRetiro());
         this.fecEntrega = dateMapper.StringToLocalDate(pedidoRequest.getFechaEntrega());
+
         this.idProvinciaR = pedidoRequest.getDomicilioRetiro().getIdProvincia();
         this.provincia = pedidoRequest.getDomicilioRetiro().getProvincia();
         this.idLocalidadR = pedidoRequest.getDomicilioRetiro().getIdLocalidad();
@@ -104,13 +106,14 @@ public class Pedido {
         this.calleR = pedidoRequest.getDomicilioRetiro().getCalle();
         this.numeroCalleR = pedidoRequest.getDomicilioRetiro().getNumero();
         this.referenciaR = pedidoRequest.getDomicilioRetiro().getReferencia();
-        this.idProvinciaE = pedidoRequest.getDomicilioRetiro().getIdProvincia();
-        this.provinciaE = pedidoRequest.getDomicilioRetiro().getProvincia();
-        this.idLocalidadE = pedidoRequest.getDomicilioRetiro().getIdLocalidad();
-        this.localidadE = pedidoRequest.getDomicilioRetiro().getLocalidad();
-        this.calleE = pedidoRequest.getDomicilioRetiro().getCalle();
-        this.numeroCalleE = pedidoRequest.getDomicilioRetiro().getNumero();
-        this.referenciaE = pedidoRequest.getDomicilioRetiro().getReferencia();
+
+        this.idProvinciaE = pedidoRequest.getDomicilioEntrega().getIdProvincia();
+        this.provinciaE = pedidoRequest.getDomicilioEntrega().getProvincia();
+        this.idLocalidadE = pedidoRequest.getDomicilioEntrega().getIdLocalidad();
+        this.localidadE = pedidoRequest.getDomicilioEntrega().getLocalidad();
+        this.calleE = pedidoRequest.getDomicilioEntrega().getCalle();
+        this.numeroCalleE = pedidoRequest.getDomicilioEntrega().getNumero();
+        this.referenciaE = pedidoRequest.getDomicilioEntrega().getReferencia();
     }
 
 }
