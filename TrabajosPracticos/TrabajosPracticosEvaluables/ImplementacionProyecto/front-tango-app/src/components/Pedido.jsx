@@ -24,19 +24,17 @@ const Pedido = () => {
   const [files, setFiles] = useState([]);
   const [peso, setPeso] = useState(0);
 
-
-
   const handleChangeTipoCarga = (event) => {
-        setTipoDeCargaSeleccionado(event.target.value)
+    setTipoDeCargaSeleccionado(event.target.value);
   };
 
   const handleDomicilioChange = (domicilio, isEnvio = false) => {
     if (isEnvio) {
-        setDomicilioEnvio(domicilio);
+      setDomicilioEnvio(domicilio);
     } else {
-        setDomicilioRetiro(domicilio);
+      setDomicilioRetiro(domicilio);
     }
-};
+  };
 
   const handleFechaChange = (fecha, isEnvio = false) => {
     if (isEnvio) {
@@ -46,67 +44,59 @@ const Pedido = () => {
     }
   };
 
-
   const saveInfo = async () => {
     let newFilesUrls = [];
     for (const file of files) {
+      if (peso > 10) {
+        alert(`El peso de las imágenes es mayor a 10 MB. Peso actual: ${peso}`);
+        return;
+      }
 
-         if (peso > 10) {
-             alert(`El peso de las imagenes es mayor a 10 MB. Peso actual: ${peso}`)
-             return
-         }
+      // Cargar imagen al storage
+      const refImagen = ref(storage, `images/${file.name}`);
+      await uploadBytes(refImagen, file);
 
-        //cargar imagen al storage
-
-        const refImagen = ref(storage, `images/${file.name}`)
-        await uploadBytes(refImagen, file)
-
-        //obtener url de la imagen y guardarlas en el array de imagenes
-        let urlImgDownload = await getDownloadURL(refImagen)
-        newFilesUrls.push(urlImgDownload);
+      // Obtener URL de la imagen
+      let urlImgDownload = await getDownloadURL(refImagen);
+      newFilesUrls.push(urlImgDownload);
     }
-    setFiles([])
-    setPeso(0)
-    return newFilesUrls
-  }
-
+    setFiles([]);
+    setPeso(0);
+    return newFilesUrls;
+  };
 
   const handleImageUpload = (e) => {
     const filesToAdd = Array.from(e.target.files);
     const validImageTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-  
-    // Validar el número total de imágenes
+
     if (files.length + filesToAdd.length > 3) {
       alert('Solo puedes subir un máximo de 3 imágenes en total.');
       return;
     }
-  
-    // Filtrar las imágenes válidas
+
     const newImages = filesToAdd.filter((file) => {
       if (!validImageTypes.includes(file.type)) {
         alert('Solo se permiten archivos de imagen (JPEG, PNG, JPG).');
         return false;
       }
-  
-      // Verificar si el peso total con la nueva imagen superaría los 10MB
+
       const newPeso = peso + (file.size / 1024 / 1024);
       if (newPeso > 10) {
         alert('El peso de las imágenes no puede superar los 10MB.');
         return false;
       }
-  
+
       return true;
     });
-  
-    // Actualizar el peso total y las imágenes
+
     setPeso(peso + newImages.reduce((total, file) => total + (file.size / 1024 / 1024), 0));
     setFiles((prevFiles) => [...prevFiles, ...newImages]);
-  }
+  };
 
   const handleImageRemove = (index) => {
     const imageToRemove = files[index];
     setFiles(files.filter((_, i) => i !== index));
-    setPeso(peso - (imageToRemove.size / 1024 / 1024)); // Ajustar el peso al eliminar una imagen
+    setPeso(peso - (imageToRemove.size / 1024 / 1024));
   };
 
   const formatDate = (date) => {
@@ -117,44 +107,66 @@ const Pedido = () => {
     return `${day}/${month}/${year}`;
   };
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Llamar a saveInfo y esperar su finalización
-    const urls = await saveInfo();
-    // Compare the two dates
-    if (new Date(fechaRetiro) > new Date(fechaEnvio)) {
-      setErrorFecha('La fecha de retiro debe ser anterior a la fecha de envío.');
-    } else {
-      setErrorFecha('');
-      const verificarDomicilio = (domicilio) => {
-        return Object.entries(domicilio).every(([key, value]) => {
-          if (key === "referencia" || key === "numero") return true;
-          return value !== "";
-        });
-      };
-      
-      const domicilioRetiroValido = verificarDomicilio(domicilioRetiro);
-      const domicilioEnvioValido = verificarDomicilio(domicilioEnvio);
-      if (tipoDeCargaSeleccionado === '' || tipoDeCargaSeleccionado === isNaN || !domicilioRetiroValido || !domicilioEnvioValido || fechaRetiro === '' || fechaEnvio === '')
-      {
-        alert('No se ha completado el formulario con los valores correspondientes')
-        return false
-      }
-      const data = {
-        "tipoDeCarga": parseInt(tipoDeCargaSeleccionado),
-        "domicilioRetiro": domicilioRetiro,
-        "domicilioEntrega": domicilioEnvio,
-        "fechaRetiro": formatDate(fechaRetiro),
-        "fechaEntrega": formatDate(fechaEnvio),
-        "urlImagenes": urls
-      };
-      console.log(urls)
-      console.log('Form submitted with valid dates', data);
-    }
-  };
+    // Obtener fecha actual
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Quitar las horas, minutos, segundos para comparar solo la fecha
 
+    // Convertir las fechas seleccionadas
+    const fechaRetiroDate = new Date(fechaRetiro);
+    const fechaEnvioDate = new Date(fechaEnvio);
+
+    // Validar que ambas fechas sean mayores o iguales a la fecha actual
+    if (fechaRetiroDate < today || fechaEnvioDate < today) {
+      setErrorFecha('Las fechas deben ser iguales o mayores a la fecha actual.');
+      return;
+    }
+
+    // Validar que la fecha de retiro sea anterior a la de envío
+    if (fechaRetiroDate > fechaEnvioDate) {
+      setErrorFecha('La fecha de retiro debe ser anterior a la fecha de envío.');
+      return;
+    }
+
+    setErrorFecha('');
+
+    const urls = await saveInfo();
+    const verificarDomicilio = (domicilio) => {
+      return Object.entries(domicilio).every(([key, value]) => {
+        if (key === "referencia" || key === "numero") return true;
+        return value !== "";
+      });
+    };
+
+    const domicilioRetiroValido = verificarDomicilio(domicilioRetiro);
+    const domicilioEnvioValido = verificarDomicilio(domicilioEnvio);
+    
+    if (
+      tipoDeCargaSeleccionado === '' || 
+      tipoDeCargaSeleccionado === isNaN || 
+      !domicilioRetiroValido || 
+      !domicilioEnvioValido || 
+      fechaRetiro === '' || 
+      fechaEnvio === ''
+    ) {
+      alert('No se ha completado el formulario con los valores correspondientes.');
+      return;
+    }
+
+    const data = {
+      "tipoDeCarga": parseInt(tipoDeCargaSeleccionado),
+      "domicilioRetiro": domicilioRetiro,
+      "domicilioEntrega": domicilioEnvio,
+      "fechaRetiro": formatDate(fechaRetiro),
+      "fechaEntrega": formatDate(fechaEnvio),
+      "urlImagenes": urls
+    };
+
+    console.log(urls);
+    console.log('Form submitted with valid dates', data);
+  };
 
   return (
     <div className="container text-center my-4">
@@ -181,9 +193,9 @@ const Pedido = () => {
           <label htmlFor="Imagenes" className="custom-file-upload btn btn-outline-primary">
             Subir Imágenes
           </label>
-            <input type="file" id="Imagenes" onChange={handleImageUpload} multiple style={{display: 'none'}}/>
+          <input type="file" id="Imagenes" onChange={handleImageUpload} multiple style={{display: 'none'}}/>
           <div className="image-preview">
-          {files.map((image, index) => (
+            {files.map((image, index) => (
               <div key={index} className="image-container">
                 <img
                   src={URL.createObjectURL(image)}
@@ -193,14 +205,13 @@ const Pedido = () => {
                 <button type='button' className='btn btn-outline-danger' onClick={() => handleImageRemove(index)}>Eliminar</button>
               </div>
             ))}
-      </div>
-            <div className='buttons'>
-              <button type="submit" className="btn btn-primary btn-lg">Aceptar</button>
-              <button type="button" className="btn btn-primary btn-lg">Cancelar</button>
-              
-            </div>
           </div>
-          
+
+          <div className='buttons'>
+            <button type="submit" className="btn btn-primary btn-lg">Aceptar</button>
+            <button type="button" className="btn btn-primary btn-lg">Cancelar</button>
+          </div>
+        </div>
       </form>
       <footer></footer>
     </div>
@@ -208,3 +219,4 @@ const Pedido = () => {
 };
 
 export default Pedido;
+
