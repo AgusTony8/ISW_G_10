@@ -49,7 +49,7 @@ public class PedidoService {
 
         this.imagenService.addImagenes(pedidoRequest.getUrlImagenes(), pedido);
 
-        this.sendEmailDadores(pedido);
+        this.sendEmailTransportistas(pedido);
 
         ArrayList<String> transportistas = transportistasService.getNameTransportisasByLocalidadId(pedido.getIdLocalidadR());
         Pedido pedido1 = this.pedidoById(pedido.getNum_pedidos());
@@ -79,11 +79,15 @@ public class PedidoService {
         return pedido.get();
     }
 
-    private void sendEmailDadores(Pedido pedido) {
+    private void sendEmailTransportistas(Pedido pedido) {
 
         ArrayList<String> emailsTransportistasLocalidadR = transportistasService.getEmailTransportistasByLocalidadId(
                 pedido.getIdLocalidadR()
         );
+
+        if (emailsTransportistasLocalidadR.isEmpty()) {
+            return;
+        }
 
         String toEmail = String.join(", ", emailsTransportistasLocalidadR);
         EmailBodyDto emailBodyDto = pedidoMapper.createEmailBody(pedido);
