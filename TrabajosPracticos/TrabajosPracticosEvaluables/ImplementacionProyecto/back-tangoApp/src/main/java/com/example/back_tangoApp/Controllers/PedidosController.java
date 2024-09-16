@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/pedidos")
+@CrossOrigin(origins = "http://localhost:3000") // Permite solicitudes desde http://localhost:3000
 @AllArgsConstructor
 public class PedidosController {
     private PedidoService pedidoService;
