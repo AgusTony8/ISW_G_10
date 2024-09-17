@@ -218,7 +218,8 @@ const Domicilio = ({onFechaChange,  onDomicilioChange,
                 <label htmlFor={`floatingTextarea-${isDomicilioEnvio ? 'envio' : 'retiro'}`}>Referencia</label>
             </div>
             <h5>Fecha</h5>
-            <input type="date" className="form-control" placeholder="Fecha de retiro" aria-label="Fecha Retiro" onChange={handleFechaChange}></input>
+            <input type="date" className="form-control" placeholder="Fecha de retiro" aria-label="Fecha Retiro" onChange={handleFechaChange}
+            ></input>
         </>
 )
 }
