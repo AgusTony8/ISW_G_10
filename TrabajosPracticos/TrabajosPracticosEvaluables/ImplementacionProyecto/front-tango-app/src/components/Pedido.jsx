@@ -66,6 +66,7 @@ const Pedido = () => {
     }
     setFiles([]);
     setPeso(0);
+    console.log(newFilesUrls);
     return newFilesUrls;
   };
 
@@ -212,7 +213,7 @@ const Pedido = () => {
           <label htmlFor="fileInput" className="custom-file-upload btn btn-outline-primary">
             Subir Imágenes
           </label>
-          <input type="file" id="fileInput" onChange={handleImageUpload} multiple style={{display: 'none'}}/>
+          <input type="file" id="fileInput" onChange={handleImageUpload}  style={{display: 'none'}}/>
           <div className="image-preview">
             {files.map((image, index) => (
               <div key={index} className="image-container">
