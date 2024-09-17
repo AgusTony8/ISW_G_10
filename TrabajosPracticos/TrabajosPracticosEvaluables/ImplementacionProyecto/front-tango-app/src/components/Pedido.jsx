@@ -6,6 +6,7 @@ import appFirebase from "../credenciales.js";
 import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
 import { pedidosService } from '../services/pedidos.service.js';
 
+
 const storage = getStorage(appFirebase);
 
 let tiposDeCarga = [
@@ -23,7 +24,9 @@ const Pedido = () => {
   const [domicilioRetiro, setDomicilioRetiro] = useState({});
   const [domicilioEnvio, setDomicilioEnvio] = useState({});
   const [files, setFiles] = useState([]);
-  const [peso, setPeso] = useState(0);
+  const [peso, setPeso] = useState(0)
+  const [toasts, setToasts] = useState([]);
+
 
   const handleChangeTipoCarga = (event) => {
     setTipoDeCargaSeleccionado(event.target.value);
@@ -98,6 +101,8 @@ const Pedido = () => {
     const imageToRemove = files[index];
     setFiles(files.filter((_, i) => i !== index));
     setPeso(peso - (imageToRemove.size / 1024 / 1024));
+    // Resetea el valor del input de archivos para permitir volver a agregar la imagen
+    document.getElementById("fileInput").value = "";
   };
 
   const formatDate = (date) => {
@@ -108,11 +113,13 @@ const Pedido = () => {
     return `${day}/${month}/${year}`;
   };
 
+  const handleCloseToast = (indexToRemove) => {
+    setToasts((prevToasts) => prevToasts.filter((_, index) => index !== indexToRemove));
+  };
 
   const PublicarPedido = async (pedido) => {
     const response = await pedidosService.RegistrarPedido(pedido)
-    console.log(pedido)
-    console.log(response)
+    return response
   }
 
   const handleSubmit = async (event) => {
@@ -124,12 +131,16 @@ const Pedido = () => {
     // Obtener fecha actual
     const today = new Date();
     today.setHours(0, 0, 0, 0); // Quitar las horas, minutos, segundos para comparar solo la fecha
+    console.log(today)
 
     // Convertir las fechas seleccionadas
-    const fechaRetiroDate = new Date(fechaRetiro);
-    const fechaEnvioDate = new Date(fechaEnvio);
-    // Validar que ambas fechas sean mayores o iguales a la fecha actual
+    const fechaRetiroDate = new Date(fechaRetiro + 'T00:00:00');
+    fechaRetiroDate.setHours(0, 0, 0, 0);
+    console.log(fechaRetiroDate)
 
+    const fechaEnvioDate = new Date(fechaEnvio + 'T00:00:00');
+    fechaEnvioDate.setHours(0, 0, 0, 0);
+    // Validar que ambas fechas sean mayores o iguales a la fecha actual
     if (fechaRetiroDate < today || fechaEnvioDate < today) {
       setErrorFecha('Las fechas deben ser iguales o mayores a la fecha actual.');
       return;
@@ -165,7 +176,15 @@ const Pedido = () => {
         "urlImagenes": urls,
         "dadorDeCarga": 1
       };
-      PublicarPedido(data)
+      const response = await PublicarPedido(data)
+      if (response.transportistasANotificar.length > 0) {
+        const toastMessages = response.transportistasANotificar.map((transportista) => 
+          `Notificación enviada al transportista ${transportista}`
+        );
+        setToasts(toastMessages);
+        // Resetea el valor del input de archivos para permitir volver a agregar la imagen
+        document.getElementById("fileInput").value = "";
+      }
   };
 
   return (
@@ -190,10 +209,10 @@ const Pedido = () => {
         
           <hr></hr>
           <h5 id='label-imagen'>Imagen del producto</h5>
-          <label htmlFor="Imagenes" className="custom-file-upload btn btn-outline-primary">
+          <label htmlFor="fileInput" className="custom-file-upload btn btn-outline-primary">
             Subir Imágenes
           </label>
-          <input type="file" id="Imagenes" onChange={handleImageUpload} multiple style={{display: 'none'}}/>
+          <input type="file" id="fileInput" onChange={handleImageUpload} multiple style={{display: 'none'}}/>
           <div className="image-preview">
             {files.map((image, index) => (
               <div key={index} className="image-container">
@@ -206,13 +225,28 @@ const Pedido = () => {
               </div>
             ))}
           </div>
-
           <div className='buttons'>
             <button type="submit" className="btn btn-primary btn-lg">Aceptar</button>
             <button type="button" className="btn btn-primary btn-lg">Cancelar</button>
           </div>
         </div>
       </form>
+      {toasts.length > 0 && (
+      <div className="toast-container position-fixed top-0 end-0 p-3" style={{ zIndex: 11 }}>
+        {toasts.map((message, index) => (
+          <div key={index} className="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div className="toast-header">
+              <strong className="me-auto">Notificacion</strong>
+              <small>Justo ahora</small>
+              <button type="button" className="btn-close" onClick={() => handleCloseToast(index)} aria-label="Close"></button>
+            </div>
+            <div className="toast-body">
+              {message}
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
       <footer></footer>
     </div>
   );
