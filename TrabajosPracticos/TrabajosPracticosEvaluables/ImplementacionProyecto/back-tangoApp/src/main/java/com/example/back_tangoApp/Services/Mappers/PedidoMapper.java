@@ -32,6 +32,8 @@ public class PedidoMapper {
 
     public PedidoPostResponseDto PedidoEntityToPostDto(Pedido pedidoEntity, ArrayList<String> transportistas) {
         DateMapper dateMapper = new DateMapper();
+        ArrayList<String> urls = (ArrayList<String>) pedidoEntity.getImagenes().stream().map(
+                Imagen::getLink).collect(Collectors.toList());
         return new PedidoPostResponseDto(
                 Math.toIntExact(pedidoEntity.getNum_pedidos()),
                 pedidoEntity.getTipoDeCarga().getNombre(),
@@ -58,8 +60,8 @@ public class PedidoMapper {
                         pedidoEntity.getReferenciaE()
 
                 ),
-                (ArrayList<String>) pedidoEntity.getImagenes().stream().map(
-                        Imagen::getLink).collect(Collectors.toList()),
+                urls
+                ,
                 transportistas
         );
     }

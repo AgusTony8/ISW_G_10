@@ -19,11 +19,14 @@ public class ImagenService {
 
         ArrayList <Imagen> imagenes = new ArrayList<>();
 
-        urls.stream().forEach(url -> {
-            Imagen imagen = new Imagen(pedido, url);
-            this.imagenRepository.saveAndFlush(imagen);
-            imagenes.add(imagen);
-        });
+        if (urls != null){
+            urls.stream().forEach(url -> {
+                Imagen imagen = new Imagen(pedido, url);
+                this.imagenRepository.saveAndFlush(imagen);
+                imagenes.add(imagen);
+            });
+        }
+
         pedido.setImagenes(imagenes);
     }
 }
