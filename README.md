@@ -35,23 +35,22 @@ Asegúrate de contar con el sistema de control de versiones, Git.
 <ul>
   <li><strong>Bibliografía</strong>
     <ul>
-      <li><strong>Unidad1_IngenieríaDeSoftwareEnContexto</strong>
+        </li>
         <ul>
           <li>IngenieríaDeSoftware</li>
         </ul>
       </li>
-      <li><strong>Unidad2_GestiónLeanÁgilDeProductosDeSoftware</strong>
         <ul>
           <li>Agile</li>
+        </ul>
+        <ul>
           <li>LeanYKanban</li>
         </ul>
       </li>
-      <li><strong>Unidad3_GestiónDelSoftwareComoProducto</strong>
         <ul>
           <li>SCM</li>
         </ul>
       </li>
-      <li><strong>Unidad4_AseguramientoDeCalidadDeProcesoYDeProducto</strong>
         <ul>
           <li>TestingDeSoftware</li>
         </ul>
@@ -59,7 +58,6 @@ Asegúrate de contar con el sistema de control de versiones, Git.
     </ul>
   </li>
   <li><strong>ClasesGrabadas</strong></li>
-  <li><strong>CronogramaDeClases</strong></li>
   <li><strong>GuíasDeTrabajosPrácticosYDeInvestigación</strong>
     <ul>
       <li>GuíaTrabajosPrácticos</li>
@@ -67,10 +65,9 @@ Asegúrate de contar con el sistema de control de versiones, Git.
       <li>GuíaTrabajosPrácticosResueltos</li>
     </ul>
   </li>
-  <li><strong>MaterialDeApoyo</strong></li>
-  <li>MaterialDeClases</li>
-  <li>ProgramaDeLaMateria</li>
-  <li>Resúmenes</li>
+  <li><strong>MaterialDeClases</strong></li>
+  <li><strong>Lineamientos</strong></li>
+  <li><strong>Resúmenes</strong></li>
   <li><strong>TemplatesDeTrabajosPrácticosYParciales</strong>
     <ul>
       <li>TemplatesTrabajosPrácticos</li>
