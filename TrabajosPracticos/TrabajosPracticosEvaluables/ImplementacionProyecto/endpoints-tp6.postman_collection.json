@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "1a4abf64-166d-42e2-b5c2-7f30fe0401ff",
+		"name": "endpoints-tp6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26976019",
+		"_collection_link": "https://grupo10-isw.postman.co/workspace/grupo10-isw-Workspace~ef3cbb98-b27d-48e0-a6ca-30a27aef2887/collection/26976019-1a4abf64-166d-42e2-b5c2-7f30fe0401ff?action=share&source=collection_link&creator=26976019"
+	},
+	"item": [
+		{
+			"name": "ApiLocalidades",
+			"item": [
+				{
+					"name": "https://apis.datos.gob.ar/georef/api/provincias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/provincias",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"provincias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://apis.datos.gob.ar/georef/api/localidades",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"localidades\": [\r\n    {\r\n      \"provincia\": \"La Pampa\",\r\n      \"orden\": \"id\",\r\n      \"aplanar\": true,\r\n      \"campos\": \"estandar\",\r\n      \"max\": 5000,\r\n      \"inicio\": 0,\r\n      \"exacto\": true\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/localidades",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://apis.datos.gob.ar/georef/api/calles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calles\":[\r\n        {\r\n            \"provincia\": \"Cordoba\",\r\n            \"localidad_censal\": \"Villa del totoral\",\r\n            \"orden\": \"id\",\r\n            \"aplanar\": true,\r\n            \"campos\": \"estandar\",\r\n            \"max\": 5000,\r\n            \"inicio\": 0\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/calles",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"calles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
