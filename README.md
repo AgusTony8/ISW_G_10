@@ -194,29 +194,19 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <td>/ClasesGrabadas</td>
     </tr>
     <tr>
-      <td>Cronograma de Clases</td>
-      <td>ISW_CdC_&lt;Año&gt;_4K&lt;numero curso&gt;.pdf</td>
-      <td>/CronogramaDeClases</td>
-    </tr>
-    <tr>
       <td>Guías de Trabajos Prácticos y de Investigación</td>
       <td>ISW_Gui_&lt;TipoTrabajo&gt;_&lt;Cuatrimestre&gt;_&lt;Año&gt;.pdf</td>
       <td>/GuíasDeTrabajosPracticosYDeInvestigacion/&lt;TipoGuia&gt;/</td>
     </tr>
     <tr>
-      <td>Material de Apoyo</td>
+      <td>Lineamientos</td>
       <td>ISW_&lt;nombre del material&gt;_&lt;año&gt;.&lt;ext&gt;</td>
-      <td>/ProgramaDeLaMateria</td>
+      <td>/Lineamientos</td>
     </tr>
     <tr>
       <td>Material de Clase</td>
       <td>ISW_&lt;Número de presentación&gt;_&lt;nombre de presentación&gt;.&lt;ext&gt;</td>
       <td>/MaterialDeClases</td>
-    </tr>
-    <tr>
-      <td>Programa de la Materia</td>
-      <td>ISW_PlanISW_&lt;Año&gt;.&lt;ext&gt;</td>
-      <td>/ProgramaDeLaMateria</td>
     </tr>
     <tr>
       <td>Resúmenes</td>
@@ -261,7 +251,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
   <strong>Bibliografía<br></strong>
   <br><li>/Bibliografía
     <ul>
-      <li>/Unidad1_IngenieríaDeSoftwareEnContexto
         <ul>
           <li>/IngenieríaDeSoftware
             <ul>
@@ -275,7 +264,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li>/Unidad2_GestiónLeanÁgilDeProductosDeSoftware
         <ul>
           <li>/Agile
             <ul>
@@ -300,7 +288,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
           </li>
         </ul>
       </li>
-      <li>/Unidad3_GestiónDelSoftwareComoProducto
         <ul>
           <li>/SCM
             <ul>
@@ -310,8 +297,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
             </ul>
           </li>
         </ul>
-      </li>
-      <li>/Unidad4_AseguramientoDeCalidadDeProcesoYDeProducto
         <ul>
           <li>/TestingDeSoftware
             <ul>
@@ -320,7 +305,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
               <li>ISW_Bib_U4_SoftwareTesting.pdf</li>
               <li>ISW_Bib_U4_TheArtOfSoftwareTesting3Edition.pdf</li>
             </ul>
-          </li>
         </ul>
       </li>
     </ul>
@@ -332,12 +316,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>ISW_Links_ClasesGrabadas_4k2_2020.pdf</li>
       <li>ISW_Links_ClasesInvertidas_4k2_2024.pdf</li>
       <li>ISW_Links_ClasesGrabadas_TodosLosCursos_2021.xlsx</li>
-    </ul>
-  </li>
-  <strong>CronogramaDeClases</strong>
-  <li>/CronogramaDeClases
-    <ul>
-      <li>ISW_CdC_2024_4k2.pdf</li>
     </ul>
   </li>
   
@@ -362,13 +340,6 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 
-  <strong><br>MaterialDeApoyo</strong>
-  <li>/MaterialDeApoyo
-    <ul>
-      <li>ISW_Herramientas_PresentaciónInformacion_2024.pdf</li>
-    </ul>
-  </li>
-
   <strong><br>MaterialDeClases</strong>
   <li>/MaterialDeClases
     <ul>
@@ -390,10 +361,16 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
     </ul>
   </li>
 
-  <strong><br>ProgramaDeLaMateria</strong>
-  <li>/ProgramaDeLaMateria
+  <strong><br>Lineamientos</strong>
+  <li>/Lineamiemtos
     <ul>
       <li>ISW_PlaniSW_2024.pdf</li>
+    </ul>
+    <ul>
+      <li>ISW_Herramientas_PresentaciónInformacion_2024.pdf</li>
+    </ul>
+     <ul>
+      <li>ISW_CdC_2024.pdf</li>
     </ul>
   </li>
 
