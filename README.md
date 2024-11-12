@@ -407,6 +407,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>/TrabajosPracticosEvaluables
         <ul>
           <li>ISW_TPE_Nro4_SCMHerramientasDeSCM_4K2_2024.pdf</li>
+          <li>ISW_TPE_Nro14_DesingThinking_4K2_2024.pdf</li>
         </ul>
       </li>
       <li>/TrabajosPracticosNoEvaluables</li>
