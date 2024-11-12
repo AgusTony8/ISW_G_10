@@ -407,6 +407,8 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>/TrabajosPracticosEvaluables
         <ul>
           <li>ISW_TPE_Nro4_SCMHerramientasDeSCM_4K2_2024.pdf</li>
+          <li>ISW_TPE_Nro8_PlanificacionDeReleaseYdeSprint_4k2_2024.pdf</li>
+          <li>ISW_TPE_Nro11_TestingCasosDePruebaYReporteDeBugs_4k2_2024.xlsx</li>
           <li>ISW_TPE_Nro14_DesingThinking_4K2_2024.pdf</li>
         </ul>
       </li>
