@@ -411,6 +411,9 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       </li>
       <li>/TrabajosPracticosNoEvaluables</li>
       <li>/TrabajosPracticosDeInvestigacion</li>
+      <ul>
+        <li>ISW_TPI_Nro1_PosterCientifico_4k2_2024.pdf</li>
+      </ul>
       <li>/PracticosAdicionales</li>
     </ul>
   </li>
