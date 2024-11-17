@@ -416,6 +416,7 @@ Se establecerá una nueva línea base luego del evento de entrega de cada trabaj
       <li>/TrabajosPracticosDeInvestigacion</li>
       <ul>
         <li>ISW_TPI_Nro1_PosterCientifico_4k2_2024.pdf</li>
+        <li>ISW_TPI_Nro2_CharlaTed_4k2_2024.pptx</li>
       </ul>
       <li>/PracticosAdicionales</li>
     </ul>
